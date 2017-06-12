@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="qiuzhong 在 Github 上的个人博客">
+    <meta name="keyword" content="null">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="image/icon.jpg">
+    <link rel="alternate" type="application/atom+xml" title="qiuzhong" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        Java的For each 语句｜qiuzhong&#39;s blog
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2015/03/12/2015-03-12-day/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('image/icon.jpg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    qiuzhong
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>Java的For each 语句</h1>
+                    
+                    <span class="meta">
+                         作者 qiuzhong
+                        <span>
+                          日期 2015-03-12
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            Java的For each 语句
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h5 id="foreach语句使用总结"><a href="#foreach语句使用总结" class="headerlink" title="foreach语句使用总结"></a>foreach语句使用总结</h5><p>foreach语句是java5的新特征之一,在遍历数组、集合方面,foreach为开发人员提供了极大的方便。<br>foreach语句是for语句的特殊简化版本，但是foreach语句并不能完全取代for语句，然而，任何的foreach语句都可以改写为for语句版本。foreach并不是一个关键字，习惯上将这种特殊的for语句格式称之为“foreach”语句。从英文字面意思理解foreach也就是“for 每一个”的意思。实际上也就是这个意思。</p>
+<p>foreach的语句格式：<br>for(元素类型t 元素变量x : 遍历对象obj){<br>     引用了x的java语句;<br>}<br>下面通过两个例子简单例子看看foreach是如何简化编程的。代码如下：</p>
+<h5 id="foreach简化数组和集合的遍历"><a href="#foreach简化数组和集合的遍历" class="headerlink" title="foreach简化数组和集合的遍历"></a>foreach简化数组和集合的遍历</h5><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">import java.util.Arrays; </div><div class="line">import java.util.List; </div><div class="line">import java.util.ArrayList; </div><div class="line"></div><div class="line">/** </div><div class="line">* Java5新特征之foreach语句使用总结 </div><div class="line">*/ </div><div class="line"></div><div class="line">public class TestArray &#123; </div><div class="line">    public static void main(String args[]) &#123; </div><div class="line">         TestArray test = new TestArray(); </div><div class="line">         test.test1(); </div><div class="line">         test.listToArray(); </div><div class="line">         test.testArray3(); </div><div class="line"></div><div class="line">     &#125; </div><div class="line">    </div><div class="line">    /** </div><div class="line">     * foreach语句输出一维数组</div><div class="line">     */ </div><div class="line">    public void test1() &#123; </div><div class="line">        //定义并初始化一个数组 </div><div class="line">        int arr[] = &#123;2, 3, 1&#125;; </div><div class="line">        System.out.println(&quot;排序前的一维数组:&quot;); </div><div class="line">        for (int x : arr) &#123; </div><div class="line">             System.out.println(x); //逐个输出数组元素的值 </div><div class="line">        &#125; </div><div class="line"></div><div class="line">        //对数组排序 </div><div class="line">        Arrays.sort(arr); </div><div class="line">        //利用java新特性for each循环输出数组 </div><div class="line">        System.out.println(&quot;排序后的一维数组:&quot;); </div><div class="line">        for (int x : arr) &#123; </div><div class="line">             System.out.println(x); //逐个输出数组元素的值 </div><div class="line">         &#125; </div><div class="line">     &#125; </div><div class="line"></div><div class="line">    /** </div><div class="line">     * 集合转换为一维数组 </div><div class="line">     */ </div><div class="line">    public void listToArray() &#123; </div><div class="line">        //创建List并添加元素 </div><div class="line">         List&lt;String&gt; list = new ArrayList&lt;String&gt;(); </div><div class="line">         list.add(&quot;1&quot;); </div><div class="line">         list.add(&quot;3&quot;); </div><div class="line">         list.add(&quot;4&quot;); </div><div class="line"></div><div class="line">        //利用froeach语句输出集合元素 </div><div class="line">        System.out.println(&quot;froeach语句输出集合元素:&quot;); </div><div class="line">        for (String x : list) &#123; </div><div class="line">             System.out.println(x); </div><div class="line">         &#125; </div><div class="line"></div><div class="line">        //将ArrayList转换为数组 </div><div class="line">         Object s[] = list.toArray(); </div><div class="line"></div><div class="line">        //利用froeach语句输出集合元素 </div><div class="line">        System.out.println(&quot;froeach语句输出集合转换而来的数组元素:&quot;); </div><div class="line">        for (Object x : s) &#123; </div><div class="line">             System.out.println(x.toString()); //逐个输出数组元素的值 </div><div class="line">         &#125; </div><div class="line">     &#125; </div><div class="line"></div><div class="line">    /** </div><div class="line">     * foreach输出二维数组测试 </div><div class="line">     */ </div><div class="line">    public void testArray2() &#123; </div><div class="line">        int arr2[][] = &#123;&#123;4, 3&#125;, &#123;1, 2&#125;&#125;; </div><div class="line">         System.out.println(&quot;foreach输出二维数组测试:&quot;); </div><div class="line">        for (int x[] : arr2) &#123; </div><div class="line">            for (int e : x) &#123; </div><div class="line">                 System.out.println(e); //逐个输出数组元素的值 </div><div class="line">             &#125; </div><div class="line">         &#125; </div><div class="line">     &#125; </div><div class="line"></div><div class="line">    /** </div><div class="line">     * foreach输出三维数组 </div><div class="line">     */ </div><div class="line">    public void testArray3() &#123; </div><div class="line">        int arr[][][] = &#123; </div><div class="line">                 &#123;&#123;1, 2&#125;, &#123;3, 4&#125;&#125;, </div><div class="line">                 &#123;&#123;5, 6&#125;, &#123;7, 8&#125;&#125; </div><div class="line">         &#125;; </div><div class="line"></div><div class="line">         System.out.println(&quot;foreach输出三维数组测试:&quot;); </div><div class="line">        for (int[][] a2 : arr) &#123; </div><div class="line">            for (int[] a1 : a2) &#123; </div><div class="line">                for (int x : a1) &#123; </div><div class="line">                     System.out.println(x); </div><div class="line">                 &#125; </div><div class="line">             &#125; </div><div class="line">         &#125; </div><div class="line">     &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>运行结果：<br>排序前的一维数组:<br>2<br>3<br>1<br>排序后的一维数组:<br>1<br>2<br>3<br>froeach语句输出集合元素:<br>1<br>3<br>4<br>froeach语句输出集合转换而来的数组元素:<br>1<br>3<br>4<br>foreach输出二维数组测试:<br>4<br>3<br>1<br>2<br>foreach输出三维数组测试:<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8 </p>
+<h5 id="foreach语句的局限性"><a href="#foreach语句的局限性" class="headerlink" title="foreach语句的局限性"></a>foreach语句的局限性</h5><p> 通过上面的例子可以发现，如果要引用数组或者集合的索引，则foreach语句无法做到，foreach仅仅老老实实地遍历数组或者集合一遍。下面看一个例子就明白了：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/** </div><div class="line">* foreach语句的局限性 </div><div class="line">*/ </div><div class="line">public class TestArray2 &#123; </div><div class="line"></div><div class="line">    public static void main(String args[]) &#123; </div><div class="line">        //定义一个一维数组 </div><div class="line">        int arr[] = new int[4]; </div><div class="line">        System.out.println(&quot;未赋值前输出刚刚定义的数组:&quot;); </div><div class="line">        for (int x : arr) &#123; </div><div class="line">             System.out.println(x); </div><div class="line">         &#125; </div><div class="line"></div><div class="line">        //通过索引给数组元素赋值 </div><div class="line">        System.out.println(&quot;通过循环变量给数组元素赋值!&quot;); </div><div class="line">        for (int i = 3; i &gt; 0; i--) &#123; </div><div class="line">             arr[i] = i; </div><div class="line">         &#125; </div><div class="line">        //循环输出创建的数组 </div><div class="line">        System.out.println(&quot;赋值后,foreach输出创建好的数组:&quot;); </div><div class="line">        for (int x : arr) &#123; </div><div class="line">             System.out.println(x); </div><div class="line">         &#125; </div><div class="line">     &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>运行结果：</p>
+<p>未赋值前输出刚刚定义的数组:<br>0<br>0<br>0<br>0 </p>
+<p>通过循环变量给数组元素赋值!</p>
+<p>赋值后,foreach输出创建好的数组:<br>0<br>1<br>2<br>3 </p>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>foreach语句是for语句特殊情况下的增强版本，简化了编程，提高了代码的可读性和安全性（不用怕数组越界）。相对老的for语句来说是个很好的补充。提倡能用foreach的地方就不要再用for了。在用到对集合或者数组索引的情况下，foreach显得力不从心，这个时候是用for语句的时候了。foreach一般结合泛型使用.</p>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2015/04/19/2015-04-19-day/" data-toggle="tooltip" data-placement="top"
+                           title="ArrayList">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2014/10/26/2014-10-26-day/" data-toggle="tooltip" data-placement="top"
+                           title="本地体力值系统">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                         data-thread-key="2015/03/12/2015-03-12-day/"
+                         data-title="Java的For each 语句"
+                         data-url="http://yoursite.com/2015/03/12/2015-03-12-day/">
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#foreach语句使用总结"><span class="toc-text">foreach语句使用总结</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#foreach简化数组和集合的遍历"><span class="toc-text">foreach简化数组和集合的遍历</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#foreach语句的局限性"><span class="toc-text">foreach语句的局限性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = '泥沙爬虫';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user};
+    (function () {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/gamerzh">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; qiuzhong 2017
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','null','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="https://github.com/gamerzh">
+</body>
+
+</html>
