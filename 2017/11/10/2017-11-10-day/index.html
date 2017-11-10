@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        leetcode 561. Array Partition I｜qiuzhong&#39;s blog
+        Unity3D 学习手札｜qiuzhong&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2017/06/12/2017-06-12-day/">
+    <link rel="canonical" href="http://yoursite.com/2017/11/10/2017-11-10-day/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -137,12 +137,12 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>leetcode 561. Array Partition I</h1>
+                    <h1>Unity3D 学习手札</h1>
                     
                     <span class="meta">
                          作者 qiuzhong
                         <span>
-                          日期 2017-06-12
+                          日期 2017-11-10
                          </span>
                     </span>
                     <div class="tags text-center">
@@ -154,7 +154,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            leetcode 561. Array Partition I
+            Unity3D 学习手札
         </span>
     </div>
 </header>
@@ -165,24 +165,17 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h3 id="Given-an-array-of-2n-integers-your-task-is-to-group-these-integers-into-n-pairs-of-integer-say-a1-b1-a2-b2-…-an-bn-which-makes-sum-of-min-ai-bi-for-all-i-from-1-to-n-as-large-as-possible"><a href="#Given-an-array-of-2n-integers-your-task-is-to-group-these-integers-into-n-pairs-of-integer-say-a1-b1-a2-b2-…-an-bn-which-makes-sum-of-min-ai-bi-for-all-i-from-1-to-n-as-large-as-possible" class="headerlink" title="Given an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1), (a2, b2), …, (an, bn) which makes sum of min(ai, bi) for all i from 1 to n as large as possible."></a>Given an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1), (a2, b2), …, (an, bn) which makes sum of min(ai, bi) for all i from 1 to n as large as possible.</h3><p>Output: 4<br>Explanation: n is 2, and the maximum sum of pairs is 4 = min(1, 2) + min(3, 4).<br>Note:<br>n is a positive integer, which is in the range of [1, 10000].<br>All the integers in the array will be in the range of [-10000, 10000].</p>
-<p>####解题思路<br>问题的关键其实在于排序,只要整个数组是有序的，问题就会变得非常简单，假设数组从小到大排列，那么2n位置上的数字相加的和一定是最小的。<br>然后随手写了个冒泡排序。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">for(int i = 0;i&lt;nums.length-1;i++)&#123;</div><div class="line">        for(int j = 0;j&lt;nums.length-1-i;j++)&#123;</div><div class="line">            if (nums[j] &gt; nums[j + 1]) &#123;</div><div class="line">		int temp = nums[j];</div><div class="line">		nums[j] = nums[j + 1];</div><div class="line">		nums[j + 1] = temp;</div><div class="line">	&#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<p>然后开心愉快的提交了代码,WTF!时间超时了,这是在搞事情啊。只能换个高效点的排序算法了。选了插入排序，问题解决。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">for( int i=0; i&lt;nums.length-1; i++ ) </div><div class="line">       &#123;	</div><div class="line">           for( int j=i+1; j&gt;0; j-- ) </div><div class="line">           &#123;</div><div class="line">               if( nums[j-1] &lt;= nums[j] )</div><div class="line">                   break;</div><div class="line">               int temp = nums[j];</div><div class="line">               nums[j] = nums[j-1];</div><div class="line">               nums[j-1] = temp;</div><div class="line">           &#125;</div><div class="line">       &#125;</div></pre></td></tr></table></figure></p>
+                <h3 id="MonoBehaviour的生命周期"><a href="#MonoBehaviour的生命周期" class="headerlink" title="MonoBehaviour的生命周期"></a>MonoBehaviour的生命周期</h3><p>官方文档:<a href="https://docs.unity3d.com/uploads/Main/monobehaviour_flowchart.svg" target="_blank" rel="external">https://docs.unity3d.com/uploads/Main/monobehaviour_flowchart.svg</a></p>
 
                 <hr>
                 
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2017/11/10/2017-11-10-day/" data-toggle="tooltip" data-placement="top"
-                           title="Unity3D 学习手札">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2017/03/17/2017-03-17-day/" data-toggle="tooltip" data-placement="top"
-                           title="leetcode 338. Counting Bits">Next Post &rarr;</a>
+                        <a href="/2017/06/12/2017-06-12-day/" data-toggle="tooltip" data-placement="top"
+                           title="leetcode 561. Array Partition I">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -191,9 +184,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                         data-thread-key="2017/06/12/2017-06-12-day/"
-                         data-title="leetcode 561. Array Partition I"
-                         data-url="http://yoursite.com/2017/06/12/2017-06-12-day/">
+                         data-thread-key="2017/11/10/2017-11-10-day/"
+                         data-title="Unity3D 学习手札"
+                         data-url="http://yoursite.com/2017/11/10/2017-11-10-day/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -208,7 +201,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Given-an-array-of-2n-integers-your-task-is-to-group-these-integers-into-n-pairs-of-integer-say-a1-b1-a2-b2-…-an-bn-which-makes-sum-of-min-ai-bi-for-all-i-from-1-to-n-as-large-as-possible"><span class="toc-text">Given an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1), (a2, b2), …, (an, bn) which makes sum of min(ai, bi) for all i from 1 to n as large as possible.</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#MonoBehaviour的生命周期"><span class="toc-text">MonoBehaviour的生命周期</span></a></li></ol>
                 </div>
             </div>
         </div>
