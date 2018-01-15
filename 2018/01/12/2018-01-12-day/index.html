@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        猴年快乐｜qiuzhong&#39;s blog
+        Android App运行时发生OOM的原因你知道哪几种？如何避免？｜qiuzhong&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2016/02/07/2016-02-07-day/">
+    <link rel="canonical" href="http://yoursite.com/2018/01/12/2018-01-12-day/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -137,12 +137,12 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>猴年快乐</h1>
+                    <h1>Android App运行时发生OOM的原因你知道哪几种？如何避免？</h1>
                     
                     <span class="meta">
                          作者 qiuzhong
                         <span>
-                          日期 2016-02-07
+                          日期 2018-01-12
                          </span>
                     </span>
                     <div class="tags text-center">
@@ -154,7 +154,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            猴年快乐
+            Android App运行时发生OOM的原因你知道哪几种？如何避免？
         </span>
     </div>
 </header>
@@ -165,21 +165,48 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h3 id="猴年即将到来"><a href="#猴年即将到来" class="headerlink" title="猴年即将到来"></a>猴年即将到来</h3><h3 id="希望新的一年能够不停的进步"><a href="#希望新的一年能够不停的进步" class="headerlink" title="希望新的一年能够不停的进步."></a>希望新的一年能够不停的进步.</h3>
+                <p>Nothing behind me, everything ahead of me, as is ever so on the road.</p>
+<h3 id="以下内容来源于网络"><a href="#以下内容来源于网络" class="headerlink" title="以下内容来源于网络"></a>以下内容来源于网络</h3><p>1.资源对象用完没有关闭，造成内存泄漏。避免：对于资源性对象，在try catch finally中将资源对象放在finally中进行回收处理，可以有效避免OOM。资源性对象例如：</p>
+<pre><code>1-1：Cursor（使用Curosr.close()）
+
+1-2:  没有关闭InputStream/OutputStream 
+
+1-3：使用完registerReceiver后没有调用unregisterReceiver
+
+1-4:   Bitmap使用完后没有调用recycle
+</code></pre><p>2.作用域不一样，导致对象不能被垃圾回收器回收</p>
+<pre><code>2-1：非静态内部类隐式持有外部类的引用
+
+2-2：Context泄漏：
+
+          2-2-1：不要保留Context-Activity长时间的引用（使用Context-Activity时必须确保和Activity一样的生命周期）
+
+          2-2-2：使用Context-Application代替Context-Activity
+
+          2-2-3:  如果你不想控制内部类的生命周期，应该避免在Activity中使用非静态内部类，应该使用静态内部类，并且在其中创建一个Activity的弱引用(WeakRefrener)
+
+2-3：Thread中引用其他对象也容易造成内存泄漏
+
+2-4：OnReceive方法里执行了太多操作
+</code></pre><p>3.内存压力过大</p>
+<pre><code>3-1：图片资源加载过多，超出内存使用空间，例如Bitmap
+
+3-2:  重复创建View，listview应该复用convertview和viewholder
+</code></pre><p>避免内存泄漏：</p>
+<p> 1：使用缓存技术，如LruCache、DisLruCache、对象重复并且频繁调用可以考虑对象池</p>
+<p> 2：对于生命周期不一样的对象，可以采用软引用或弱引用(SoftRefrener,WeakRefrener)</p>
+<p> 3:  对于资源对象用完后在finally中强制关闭</p>
+<p> 4：内存压力过大，就要用统一的内存管理</p>
+
                 <hr>
                 
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2016/02/14/2016-02-14-day/" data-toggle="tooltip" data-placement="top"
-                           title="可以不爱，请不要伤害">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2015/04/19/2015-04-19-day/" data-toggle="tooltip" data-placement="top"
-                           title="ArrayList">Next Post &rarr;</a>
+                        <a href="/2017/12/18/2017-12-18-day/" data-toggle="tooltip" data-placement="top"
+                           title="cocos2d-x 截屏相关的内容">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -188,9 +215,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                         data-thread-key="2016/02/07/2016-02-07-day/"
-                         data-title="猴年快乐"
-                         data-url="http://yoursite.com/2016/02/07/2016-02-07-day/">
+                         data-thread-key="2018/01/12/2018-01-12-day/"
+                         data-title="Android App运行时发生OOM的原因你知道哪几种？如何避免？"
+                         data-url="http://yoursite.com/2018/01/12/2018-01-12-day/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -205,7 +232,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#猴年即将到来"><span class="toc-text">猴年即将到来</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#希望新的一年能够不停的进步"><span class="toc-text">希望新的一年能够不停的进步.</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#以下内容来源于网络"><span class="toc-text">以下内容来源于网络</span></a></li></ol>
                 </div>
             </div>
         </div>
