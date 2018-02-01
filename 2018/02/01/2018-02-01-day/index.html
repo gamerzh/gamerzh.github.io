@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        一道简单的算法题｜qiuzhong&#39;s blog
+        LeetCode 771｜qiuzhong&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2018/01/19/2018-01-19-day/">
+    <link rel="canonical" href="http://yoursite.com/2018/02/01/2018-02-01-day/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -137,12 +137,12 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>一道简单的算法题</h1>
+                    <h1>LeetCode 771</h1>
                     
                     <span class="meta">
                          作者 qiuzhong
                         <span>
-                          日期 2018-01-19
+                          日期 2018-02-01
                          </span>
                     </span>
                     <div class="tags text-center">
@@ -154,7 +154,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            一道简单的算法题
+            LeetCode 771
         </span>
     </div>
 </header>
@@ -165,23 +165,28 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <p>As iron sharpens iron, so a friend sharpens a friend.</p>
-<p>在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public boolean Find(int target, int [][] array) &#123;</div><div class="line">        int row=0;</div><div class="line">        int col=array[0].length-1;</div><div class="line">        while(row&lt;=array.length-1&amp;&amp;col&gt;=0)&#123;</div><div class="line">            if(target==array[row][col])</div><div class="line">                return true;</div><div class="line">            else if(target&gt;array[row][col])</div><div class="line">                row++;</div><div class="line">            else</div><div class="line">                col--;</div><div class="line">        &#125;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+                <p>The world is a fine place, and worth fighting for.</p>
+<p>You’re given strings J representing the types of stones that are jewels, and S representing the stones you have.  Each character in S is a type of stone you have.  You want to know how many of the stones you have are also jewels.</p>
+<p>The letters in J are guaranteed distinct, and all characters in J and S are letters. Letters are case sensitive, so “a” is considered a different type of stone from “A”.</p>
+<p>Example 1:</p>
+<p>Input: J = “aA”, S = “aAAbbbb”<br>Output: 3<br>Example 2:</p>
+<p>Input: J = “z”, S = “ZZ”<br>Output: 0<br>Note:</p>
+<p>S and J will consist of letters and have length at most 50.<br>The characters in J are distinct.</p>
+<p>直接想到的方案是这样的:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public int numJewelsInStones(String J, String S) &#123;</div><div class="line">        char[] jChar = J.toCharArray();</div><div class="line">        char[] sChar = S.toCharArray();</div><div class="line">        int num = 0;</div><div class="line">        for(int i =0; i&lt; jChar.length;i++)&#123;</div><div class="line">            for(int j=0;j&lt;sChar.length;j++)&#123;</div><div class="line">                if(jChar[i] == sChar[j])&#123;</div><div class="line">                    num++;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return num;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>虽然通过了网站的测试用例,但是我加了一个测试用例，发现了这个解法是有问题的，例如输入“aAa”和”aAAbbbb”,结果并不是3.</p>
+<p>在讨论区看到了一个比较有趣的解法:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public int numJewelsInStones(String J, String S) &#123;</div><div class="line">        int[] map = new int[58];</div><div class="line">        int result = 0;</div><div class="line">        for(char c:S.toCharArray())&#123;</div><div class="line">            map[c-&apos;A&apos;]++;</div><div class="line">        &#125;</div><div class="line">        for(char c:J.toCharArray())&#123;</div><div class="line">            result += map[c-&apos;A&apos;];</div><div class="line">        &#125;</div><div class="line">        return result;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>但是这个解法依然没有解决J字符串包含重复字符的问题</p>
+<p>最后看到了一个利用HashSet来解决的:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public int numJewelsInStones(String J, String S) &#123;</div><div class="line">        Set&lt;Character&gt; set = new HashSet&lt;&gt;();</div><div class="line">        for (Character c: J.toCharArray()) &#123;</div><div class="line">            set.add(c);</div><div class="line">        &#125;</div><div class="line">        int count = 0;</div><div class="line">        for (Character c: S.toCharArray()) &#123;</div><div class="line">            if (set.contains(c)) &#123;</div><div class="line">                count++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return count;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
                 <hr>
                 
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2018/02/01/2018-02-01-day/" data-toggle="tooltip" data-placement="top"
-                           title="LeetCode 771">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2018/01/12/2018-01-12-day/" data-toggle="tooltip" data-placement="top"
-                           title="Android App运行时发生OOM的原因你知道哪几种？如何避免？">Next Post &rarr;</a>
+                        <a href="/2018/01/19/2018-01-19-day/" data-toggle="tooltip" data-placement="top"
+                           title="一道简单的算法题">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -190,9 +195,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                         data-thread-key="2018/01/19/2018-01-19-day/"
-                         data-title="一道简单的算法题"
-                         data-url="http://yoursite.com/2018/01/19/2018-01-19-day/">
+                         data-thread-key="2018/02/01/2018-02-01-day/"
+                         data-title="LeetCode 771"
+                         data-url="http://yoursite.com/2018/02/01/2018-02-01-day/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
