@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        LeetCode 771.Jewels and Stones｜qiuzhong&#39;s blog
+        12种不宜使用的Javascript语法｜qiuzhong&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2018/02/01/2018-02-01-day/">
+    <link rel="canonical" href="http://yoursite.com/2018/08/26/2018-08-26-day/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -137,12 +137,12 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>LeetCode 771.Jewels and Stones</h1>
+                    <h1>12种不宜使用的Javascript语法</h1>
                     
                     <span class="meta">
                          作者 qiuzhong
                         <span>
-                          日期 2018-02-01
+                          日期 2018-08-26
                          </span>
                     </span>
                     <div class="tags text-center">
@@ -154,7 +154,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            LeetCode 771.Jewels and Stones
+            12种不宜使用的Javascript语法
         </span>
     </div>
 </header>
@@ -165,33 +165,71 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <p>The world is a fine place, and worth fighting for.</p>
-<p>You’re given strings J representing the types of stones that are jewels, and S representing the stones you have.  Each character in S is a type of stone you have.  You want to know how many of the stones you have are also jewels.</p>
-<p>The letters in J are guaranteed distinct, and all characters in J and S are letters. Letters are case sensitive, so “a” is considered a different type of stone from “A”.</p>
-<p>Example 1:</p>
-<p>Input: J = “aA”, S = “aAAbbbb”<br>Output: 3<br>Example 2:</p>
-<p>Input: J = “z”, S = “ZZ”<br>Output: 0<br>Note:</p>
-<p>S and J will consist of letters and have length at most 50.<br>The characters in J are distinct.</p>
-<p>直接想到的方案是这样的:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public int numJewelsInStones(String J, String S) &#123;</div><div class="line">        char[] jChar = J.toCharArray();</div><div class="line">        char[] sChar = S.toCharArray();</div><div class="line">        int num = 0;</div><div class="line">        for(int i =0; i&lt; jChar.length;i++)&#123;</div><div class="line">            for(int j=0;j&lt;sChar.length;j++)&#123;</div><div class="line">                if(jChar[i] == sChar[j])&#123;</div><div class="line">                    num++;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return num;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>虽然通过了网站的测试用例,但是我加了一个测试用例，发现了这个解法是有问题的，例如输入“aAa”和”aAAbbbb”,结果并不是3.</p>
-<p>在讨论区看到了一个比较有趣的解法:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public int numJewelsInStones(String J, String S) &#123;</div><div class="line">        int[] map = new int[58];</div><div class="line">        int result = 0;</div><div class="line">        for(char c:S.toCharArray())&#123;</div><div class="line">            map[c-&apos;A&apos;]++;</div><div class="line">        &#125;</div><div class="line">        for(char c:J.toCharArray())&#123;</div><div class="line">            result += map[c-&apos;A&apos;];</div><div class="line">        &#125;</div><div class="line">        return result;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>但是这个解法依然没有解决J字符串包含重复字符的问题</p>
-<p>最后看到了一个利用HashSet来解决的:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public int numJewelsInStones(String J, String S) &#123;</div><div class="line">        Set&lt;Character&gt; set = new HashSet&lt;&gt;();</div><div class="line">        for (Character c: J.toCharArray()) &#123;</div><div class="line">            set.add(c);</div><div class="line">        &#125;</div><div class="line">        int count = 0;</div><div class="line">        for (Character c: S.toCharArray()) &#123;</div><div class="line">            if (set.contains(c)) &#123;</div><div class="line">                count++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return count;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+                <h3 id="1"><a href="#1" class="headerlink" title="1. =="></a>1. ==</h3><p>Javascript有两组相等运算符，一组是==和!=，另一组是===和!==。前者只比较值的相等，后者除了值以外，还比较类型是否相同。</p>
+<p>请尽量不要使用前一组，永远只使用===和!==。因为==默认会进行类型转换，规则十分难记。如果你不相信的话，请回答下面五个判断式的值是true还是false：</p>
+<h3 id="2-with"><a href="#2-with" class="headerlink" title="2. with"></a>2. with</h3><p>with的本意是减少键盘输入。比如</p>
+<p>　　obj.a = obj.b;</p>
+<p>　　obj.c = obj.d;</p>
+<p>可以简写成</p>
+<p>　　with(obj) {<br>　　　　a = b;<br>　　　　c = d;<br>　　}</p>
+<p>但是，在实际运行时，解释器会首先判断obj.b和obj.d是否存在，如果不存在的话，再判断全局变量b和d是否存在。这样就导致了低效率，而且可能会导致意外，因此最好不要使用with语句。</p>
+<h3 id="3-eval"><a href="#3-eval" class="headerlink" title="3. eval"></a>3. eval</h3><p>eval用来直接执行一个字符串。这条语句也是不应该使用的，因为它有性能和安全性的问题，并且使得代码更难阅读。</p>
+<p>eval能够做到的事情，不用它也能做到。比如</p>
+<p>　　eval(“myValue = myObject.” + myKey + “;”);</p>
+<p>可以直接写成</p>
+<p>　　myValue = myObject[myKey];</p>
+<h3 id="4-continue"><a href="#4-continue" class="headerlink" title="4. continue"></a>4. continue</h3><p>这条命令的作用是返回到循环的头部，但是循环本来就会返回到头部。所以通过适当的构造，完全可以避免使用这条命令，使得效率得到改善。</p>
+<h3 id="5-switch-贯穿"><a href="#5-switch-贯穿" class="headerlink" title="5. switch 贯穿"></a>5. switch 贯穿</h3><p>switch结构中的case语句，默认是顺序执行，除非遇到break，return和throw。有的程序员喜欢利用这个特点，比如</p>
+<p>　　switch(n) {<br>　　　　case 1:<br>　　　　case 2:<br>　　　　　　break;<br>　　}</p>
+<p>这样写容易出错，而且难以发现。因此建议避免switch贯穿，凡是有case的地方，一律加上break。</p>
+<p>　　switch(n) {<br>　　　　case 1:<br>　　　　　　break;<br>　　　　case 2:<br>　　　　　　break;<br>　　}</p>
+<h3 id="6-单行的块结构"><a href="#6-单行的块结构" class="headerlink" title="6. 单行的块结构"></a>6. 单行的块结构</h3><p>if、while、do和for，都是块结构语句，但是也可以接受单行命令。比如</p>
+<p>　　if (ok) t = true;</p>
+<p>甚至写成</p>
+<p>　　if (ok)<br>　　　　t = true;</p>
+<p>这样不利于阅读代码，而且将来添加语句时非常容易出错。建议不管是否只有一行命令，都一律加上大括号。</p>
+<p>　　if (ok){<br>　　　　t = true;<br>　　}</p>
+<h3 id="7-和–"><a href="#7-和–" class="headerlink" title="7. ++和–"></a>7. ++和–</h3><p>递增运算符++和递减运算符–，直接来自C语言，表面上可以让代码变得很紧凑，但是实际上会让代码看上去更复杂和更晦涩。因此为了代码的整洁性和易读性，不用为好。</p>
+<h3 id="8-位运算符"><a href="#8-位运算符" class="headerlink" title="8. 位运算符"></a>8. 位运算符</h3><p>Javascript完全套用了Java的位运算符，包括按位与&amp;、按位或|、按位异或^、按位非~、左移&lt;&lt;、带符号的右移&gt;&gt;和用0补足的右移&gt;&gt;&gt;。</p>
+<p>这套运算符针对的是整数，所以对Javascript完全无用，因为Javascript内部，所有数字都保存为双精度浮点数。如果使用它们的话，Javascript不得不将运算数先转为整数，然后再进行运算，这样就降低了速度。而且”按位与运算符”&amp;同”逻辑与运算符”&amp;&amp;，很容易混淆。</p>
+<h3 id="9-function语句"><a href="#9-function语句" class="headerlink" title="9. function语句"></a>9. function语句</h3><p>在Javascript中定义一个函数，有两种写法：</p>
+<p>　　function foo() { }</p>
+<p>和</p>
+<p>　　var foo = function () { }</p>
+<p>两种写法完全等价。但是在解析的时候，前一种写法会被解析器自动提升到代码的头部，因此违背了函数应该先定义后使用的要求，所以建议定义函数时，全部采用后一种写法。</p>
+<h3 id="10-基本数据类型的包装对象"><a href="#10-基本数据类型的包装对象" class="headerlink" title="10. 基本数据类型的包装对象"></a>10. 基本数据类型的包装对象</h3><p>Javascript的基本数据类型包括字符串、数字、布尔值，它们都有对应的包装对象String、Number和Boolean。所以，有人会这样定义相关值：</p>
+<p>　　new String(“Hello World”);</p>
+<p>　　new Number(2000);</p>
+<p>　　new Boolean(false);</p>
+<p>这样写完全没有必要，而且非常费解，因此建议不要使用。</p>
+<p>另外，new Object和new Array也不建议使用，可以用{}和[]代替。</p>
+<h3 id="11-new语句"><a href="#11-new语句" class="headerlink" title="11. new语句"></a>11. new语句</h3><p>Javascript是世界上第一个被大量使用的支持Lambda函数的语言，本质上属于与Lisp同类的函数式编程语言。但是当前世界，90%以上的程序员都是使用面向对象编程。为了靠近主流，Javascript做出了妥协，采纳了类的概念，允许根据类生成对象。</p>
+<p>类是这样定义的：</p>
+<p>　　var Cat = function (name) {<br>　　　　this.name = name;<br>　　　　this.saying = ‘meow’ ;<br>　　}</p>
+<p>然后，再生成一个对象</p>
+<p>　　var myCat = new Cat(‘mimi’);</p>
+<p>这种利用函数生成类、利用new生成对象的语法，其实非常奇怪，一点都不符合直觉。而且，使用的时候，很容易忘记加上new，就会变成执行函数，然后莫名其妙多出几个全局变量。所以，建议不要这样创建对象，而采用一种变通方法。</p>
+<p>Douglas Crockford给出了一个函数：</p>
+<p>　　Object.beget = function (o) {<br>　　　　var F = function (o) {};<br>　　　　F.prototype = o ;<br>　　　　return new F;<br>　　};</p>
+<p>创建对象时就利用这个函数，对原型对象进行操作：</p>
+<p>　　var Cat = {<br>　　　　name:’’,<br>　　　　saying:’meow’<br>　　};</p>
+<p>　　var myCat = Object.beget(Cat);</p>
+<p>对象生成后，可以自行对相关属性进行赋值：</p>
+<p>　　myCat.name = ‘mimi’;</p>
+<h3 id="12-void"><a href="#12-void" class="headerlink" title="12. void"></a>12. void</h3><p>在大多数语言中，void都是一种类型，表示没有值。但是在Javascript中，void是一个运算符，接受一个运算数，并返回undefined。</p>
+<p>　　void 0; // undefined</p>
+<p>这个命令没什么用，而且很令人困惑，建议避免使用。</p>
+<p>以上内容转载自 <a href="http://www.ruanyifeng.com/blog/2010/01/12_javascript_syntax_structures_you_should_not_use.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2010/01/12_javascript_syntax_structures_you_should_not_use.html</a></p>
 
                 <hr>
                 
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2018/08/26/2018-08-26-day/" data-toggle="tooltip" data-placement="top"
-                           title="12种不宜使用的Javascript语法">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2018/01/19/2018-01-19-day/" data-toggle="tooltip" data-placement="top"
-                           title="一道简单的算法题">Next Post &rarr;</a>
+                        <a href="/2018/02/01/2018-02-01-day/" data-toggle="tooltip" data-placement="top"
+                           title="LeetCode 771.Jewels and Stones">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -200,9 +238,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                         data-thread-key="2018/02/01/2018-02-01-day/"
-                         data-title="LeetCode 771.Jewels and Stones"
-                         data-url="http://yoursite.com/2018/02/01/2018-02-01-day/">
+                         data-thread-key="2018/08/26/2018-08-26-day/"
+                         data-title="12种不宜使用的Javascript语法"
+                         data-url="http://yoursite.com/2018/08/26/2018-08-26-day/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -217,7 +255,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1"><span class="toc-text">1. ==</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-with"><span class="toc-text">2. with</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-eval"><span class="toc-text">3. eval</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-continue"><span class="toc-text">4. continue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-switch-贯穿"><span class="toc-text">5. switch 贯穿</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-单行的块结构"><span class="toc-text">6. 单行的块结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-和–"><span class="toc-text">7. ++和–</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-位运算符"><span class="toc-text">8. 位运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-function语句"><span class="toc-text">9. function语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-基本数据类型的包装对象"><span class="toc-text">10. 基本数据类型的包装对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-new语句"><span class="toc-text">11. new语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-void"><span class="toc-text">12. void</span></a></li></ol>
                 </div>
             </div>
         </div>
