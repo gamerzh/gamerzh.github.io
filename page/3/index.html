@@ -265,6 +265,128 @@
 
 <div class="post-preview "
      style="background-image: url('')">
+    <a href="/2016/10/16/2016-10-16-day/">
+        <h2 class="post-title">
+            微信图片分享
+        </h2>
+        <p class="post-meta">
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-10-16
+        </p>
+        
+        <div class="post-content-preview">
+            <p>
+                这周在app中添加了微信分享的功能,具体的操作方式是利用cocos2d-x提供的截屏API，获取图片,然后通过微信的图片分享API分享给好友。在这个过程中遇到了一个坑,记录一下.
+一开始我使用的cocos2d-x的截屏API如下://获取屏幕尺寸大小Size winSize = CCDirect..
+            </p>
+        </div>
+    </a>
+
+</div>
+
+<hr>
+
+
+
+<div class="post-preview "
+     style="background-image: url('')">
+    <a href="/2016/10/11/2016-10-11-day/">
+        <h2 class="post-title">
+            Java单例设计模式
+        </h2>
+        <p class="post-meta">
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-10-11
+        </p>
+        
+        <div class="post-content-preview">
+            <p>
+                单例设计模式这是一种常见的单例写法:public class Single &#123;    private Single()&#123;        System.out.println(&quot;single&quot;);    &#125;    private static  S..
+            </p>
+        </div>
+    </a>
+
+</div>
+
+<hr>
+
+
+
+<div class="post-preview "
+     style="background-image: url('')">
+    <a href="/2016/10/08/2016-10-08-day/">
+        <h2 class="post-title">
+            Android Bitmap占用的内存大小
+        </h2>
+        <p class="post-meta">
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-10-08
+        </p>
+        
+        <div class="post-content-preview">
+            <p>
+                图片是由像素组成的，所以要计算一张图片的大小，需要知道 3 个参数：
+
+图片的长
+图片的宽
+每个像素占用的内存大小因此，得到一个公式图片占用的内存大小 = 图片长 x 图片宽 x 每个像素占用的内存大小
+
+在 Android 中，每个像素占用的内存大小是由 Bitmap.Config 来决定的，..
+            </p>
+        </div>
+    </a>
+
+</div>
+
+<hr>
+
+
+
+<div class="post-preview "
+     style="background-image: url('')">
+    <a href="/2016/09/29/2016-09-29-day/">
+        <h2 class="post-title">
+            C++中文字符串转NSString时显示乱码
+        </h2>
+        <p class="post-meta">
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-09-29
+        </p>
+        
+        <div class="post-content-preview">
+            <p>
+                问题场景app的开发使用了cocos2d-x游戏框架，语言选择C++,在做IOS版本的微信分享的时候需要传入中文的内容描述，发现利用如下代码转化NSString的时候，显示结果是乱码NSString* wxUrl = [[NSString alloc] initWithFormat:@&quot..
+            </p>
+        </div>
+    </a>
+
+</div>
+
+<hr>
+
+
+
+<div class="post-preview "
+     style="background-image: url('')">
+    <a href="/2016/09/28/2016-09-28-day/">
+        <h2 class="post-title">
+            Bitmap 转 byte[]
+        </h2>
+        <p class="post-meta">
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-09-28
+        </p>
+        
+        <div class="post-content-preview">
+            <p>
+                今天在做Android微信分享的时候发现微信有个图片的参数需要传入byte[]Android获取的图片一般都会先转成BitmapResources res=getResources();  Bitmap bmp=BitmapFactory.decodeResource(res, R.drawab..
+            </p>
+        </div>
+    </a>
+
+</div>
+
+<hr>
+
+
+
+<div class="post-preview "
+     style="background-image: url('')">
     <a href="/2016/07/02/2016-07-02-day/">
         <h2 class="post-title">
             Android工程APK签名
@@ -325,124 +447,6 @@ jarsigner 工具利用密钥仓库中的信息来产生或校验 Java 存档 (JA
         <div class="post-content-preview">
             <p>
                 遇到char*和string之间相互转换的时候被卡了一下。就收点资料学习下(1)char*转化为string，直接赋值即可。     EX: char* p = &quot;tsinghua&quot;.            string str = p;(2)string转化为char*，走..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('')">
-    <a href="/2016/02/18/2016-02-18-day/">
-        <h2 class="post-title">
-            Cocos2d-x 遇到的问题记录
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-02-18
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                一个奇怪的问题AppDelegate::applicationDidEnterBackground()和AppDelegate::applicationWillEnterForeground()这两个方法在关闭电源的时候，会被调用2次，在某些机型上具体原因不清楚,先做一个记录
-
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('')">
-    <a href="/2016/02/17/2016-02-17-day/">
-        <h2 class="post-title">
-            Cocos2d-x LabelAtlas 遇到的问题记录
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-02-17
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                一个奇怪的问题LabelAtlas ::create(&quot;0&quot;, &quot;ynum2.png&quot;, 15, 16, &apos;0&apos;);
-第一个字符串传空就在某些机型上会引起同一场景内的其他精灵的图片显示不出来具体原因不清楚,先做一个记录
-
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('')">
-    <a href="/2016/02/16/2016-02-16-day/">
-        <h2 class="post-title">
-            Cocos2d-x ProgressTimer的简单使用
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-02-16
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                开发过程中需要一个类似于游戏技能冷却的效果Sprite* progressSprite = Sprite::create(&quot;headportrait/time_clock_bg.png&quot;);mProgressTimer = ProgressTimer::create(prog..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('')">
-    <a href="/2016/02/15/2016-02-15-day/">
-        <h2 class="post-title">
-            Cocos2d-x 的自定义事件监听机制
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-02-15
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                EventListenerCustom的使用最近发现可以通过cocos2d-x的事件驱动机制来控制UI,而不是所有的UI都需要在update中完成EventListenerCustom只会在触发的时候执行一次UI线程，比起一直在update中等待会节省很多资源EventListenerCusto..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('')">
-    <a href="/2016/02/14/2016-02-14-day/">
-        <h2 class="post-title">
-            可以不爱，请不要伤害
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-02-14
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                cocos2d-x如何在非主线程里调用UI线程的内容最近的工作都是围绕一款联网棋牌游戏展开的,作为客户端开发的我,记录一下最近遇到对的问题长连接我选择了ODsocket,选择的原因是我觉得它是开源的，且使用起来比较方便,而且我对C++的熟悉程度并不能让我很快的造一个轮子所以就先借了开源的现成的轮..
             </p>
         </div>
     </a>
@@ -556,7 +560,7 @@ jarsigner 工具利用密钥仓库中的信息来产生或校验 Java 存档 (JA
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; qiuzhong 2018
+                    Copyright &copy; qiuzhong 2020
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
                     <br>
