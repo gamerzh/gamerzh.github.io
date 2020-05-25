@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,8 +43,8 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
-" data-ishome = "false" >
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -119,8 +119,7 @@
 <!--only post-->
 
 
-<img class="wechat-title-img"
-     src="">
+<img class="wechat-title-img" src="">
 
 
 <style>
@@ -170,8 +169,8 @@
 <li>关于python多线程,考虑要使用python多线程是因为脚本里有一项工作是对资源文件夹里的图片进行pkm压缩,使用的是ETC2的开源压缩工具但是由于是python调用exe来工作的，多线程并不能解决exe只有一份,会相互抢占资源的问题,放弃的这个方案</li>
 <li>目前采用的方案是个折中的办法,就是第一次打包的时候全部文件编译,同时记录并用版本工具维护这些数据,下次打包的时候先对比md5,只编译那些修改或则新增的文件,在这个过程中遇到的麻烦都在路径的拼接和文件的拷贝上</li>
 </ul>
-<p>获取文件的MD5<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">def getFileMD5(file_path):</div><div class="line">    file = open(file_path,&apos;rb&apos;)</div><div class="line">    md5 = hashlib.md5(file.read()).hexdigest()</div><div class="line">    file.close()</div><div class="line">    return md5</div></pre></td></tr></table></figure></p>
-<p>拷贝文件<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">def copy_files(src, dst):</div><div class="line">    for item in os.listdir(src):</div><div class="line">        path = os.path.join(src, item)</div><div class="line">        if not item.startswith(&apos;.&apos;) and not item.endswith(&apos;.gz&apos;) and os.path.isfile(path):</div><div class="line">            shutil.copy(path, dst)</div><div class="line">        if os.path.isdir(path):</div><div class="line">            new_dst = os.path.join(dst, item)</div><div class="line">            if not os.path.exists(new_dst):</div><div class="line">                os.mkdir(new_dst)</div><div class="line">            copy_files(path, new_dst)</div></pre></td></tr></table></figure></p>
+<p>获取文件的MD5<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def getFileMD5(file_path):</span><br><span class="line">    file = open(file_path,&apos;rb&apos;)</span><br><span class="line">    md5 = hashlib.md5(file.read()).hexdigest()</span><br><span class="line">    file.close()</span><br><span class="line">    return md5</span><br></pre></td></tr></table></figure></p>
+<p>拷贝文件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def copy_files(src, dst):</span><br><span class="line">    for item in os.listdir(src):</span><br><span class="line">        path = os.path.join(src, item)</span><br><span class="line">        if not item.startswith(&apos;.&apos;) and not item.endswith(&apos;.gz&apos;) and os.path.isfile(path):</span><br><span class="line">            shutil.copy(path, dst)</span><br><span class="line">        if os.path.isdir(path):</span><br><span class="line">            new_dst = os.path.join(dst, item)</span><br><span class="line">            if not os.path.exists(new_dst):</span><br><span class="line">                os.mkdir(new_dst)</span><br><span class="line">            copy_files(path, new_dst)</span><br></pre></td></tr></table></figure></p>
 
                 <hr>
                 
@@ -179,14 +178,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2020/05/24/2020-05-24-day/" data-toggle="tooltip" data-placement="top"
-                           title="Unity 学习笔记1">&larr; Previous Post</a>
+                        <a href="/2020/05/24/2020-05-24-day/" data-toggle="tooltip" data-placement="top" title="Unity 学习笔记1">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2018/11/15/2018-11-15-day/" data-toggle="tooltip" data-placement="top"
-                           title="Lua中table常用的四种遍历方式">Next Post &rarr;</a>
+                        <a href="/2018/11/15/2018-11-15-day/" data-toggle="tooltip" data-placement="top" title="Lua中table常用的四种遍历方式">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -194,10 +191,7 @@
                 
                 <!-- 多说评论框 start -->
                 <div class="comment">
-                    <div class="ds-thread"
-                         data-thread-key="2020/05/22/2020-05-22-day/"
-                         data-title="Python基础整理和记录"
-                         data-url="http://yoursite.com/2020/05/22/2020-05-22-day/">
+                    <div class="ds-thread" data-thread-key="2020/05/22/2020-05-22-day/" data-title="Python基础整理和记录" data-url="http://yoursite.com/2020/05/22/2020-05-22-day/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -279,7 +273,7 @@
 
                 
                     <li>
-                        <a target="_blank"  href="https://github.com/gamerzh">
+                        <a target="_blank" href="https://github.com/gamerzh">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>

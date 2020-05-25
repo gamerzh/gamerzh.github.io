@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,8 +43,8 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
-" data-ishome = "false" >
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -119,8 +119,7 @@
 <!--only post-->
 
 
-<img class="wechat-title-img"
-     src="">
+<img class="wechat-title-img" src="">
 
 
 <style>
@@ -175,7 +174,7 @@
 <p>原地旋转输入矩阵，使其变为:<br>[<br>  [7,4,1],<br>  [8,5,2],<br>  [9,6,3]<br>]<br>示例 2:</p>
 <p>给定 matrix =<br>[<br>  [ 5, 1, 9,11],<br>  [ 2, 4, 8,10],<br>  [13, 3, 6, 7],<br>  [15,14,12,16]<br>], </p>
 <p>原地旋转输入矩阵，使其变为:<br>[<br>  [15,13, 2, 5],<br>  [14, 3, 4, 1],<br>  [12, 6, 8, 9],<br>  [16, 7,10,11]<br>]</p>
-<p>给出一种直接计算转换后矩阵的解答:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    void rotate(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123;</div><div class="line">        int n = matrix.size();</div><div class="line">        for(int i=0;i&lt;n/2;i++)&#123;</div><div class="line">            for(int j = i; j &lt; n-1-i; j++)&#123;  </div><div class="line">                int t = matrix[i][j];  </div><div class="line">                matrix[i][j] = matrix[n-1-j][i];  </div><div class="line">                matrix[n-1-j][i] = matrix[n-1-i][n-1-j];  </div><div class="line">                matrix[n-1-i][n-1-j] = matrix[j][n-1-i];  </div><div class="line">                matrix[j][n-1-i] = t;  </div><div class="line">            &#125;  </div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>给出一种直接计算转换后矩阵的解答:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    void rotate(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123;</span><br><span class="line">        int n = matrix.size();</span><br><span class="line">        for(int i=0;i&lt;n/2;i++)&#123;</span><br><span class="line">            for(int j = i; j &lt; n-1-i; j++)&#123;  </span><br><span class="line">                int t = matrix[i][j];  </span><br><span class="line">                matrix[i][j] = matrix[n-1-j][i];  </span><br><span class="line">                matrix[n-1-j][i] = matrix[n-1-i][n-1-j];  </span><br><span class="line">                matrix[n-1-i][n-1-j] = matrix[j][n-1-i];  </span><br><span class="line">                matrix[j][n-1-i] = t;  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <p>当然也可以先求出转置矩阵,然后翻转每一行来求解.</p>
 
                 <hr>
@@ -184,14 +183,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2018/08/26/2018-08-26-day/" data-toggle="tooltip" data-placement="top"
-                           title="12种不宜使用的Javascript语法">&larr; Previous Post</a>
+                        <a href="/2018/08/26/2018-08-26-day/" data-toggle="tooltip" data-placement="top" title="12种不宜使用的Javascript语法">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2018/02/01/2018-02-01-day/" data-toggle="tooltip" data-placement="top"
-                           title="LeetCode 771.Jewels and Stones">Next Post &rarr;</a>
+                        <a href="/2018/02/01/2018-02-01-day/" data-toggle="tooltip" data-placement="top" title="LeetCode 771.Jewels and Stones">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -199,10 +196,7 @@
                 
                 <!-- 多说评论框 start -->
                 <div class="comment">
-                    <div class="ds-thread"
-                         data-thread-key="2018/06/12/2018-06-12-day/"
-                         data-title="LeetCode 48.旋转图像"
-                         data-url="http://yoursite.com/2018/06/12/2018-06-12-day/">
+                    <div class="ds-thread" data-thread-key="2018/06/12/2018-06-12-day/" data-title="LeetCode 48.旋转图像" data-url="http://yoursite.com/2018/06/12/2018-06-12-day/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -284,7 +278,7 @@
 
                 
                     <li>
-                        <a target="_blank"  href="https://github.com/gamerzh">
+                        <a target="_blank" href="https://github.com/gamerzh">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,8 +43,8 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
-" data-ishome = "false" >
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -119,8 +119,7 @@
 <!--only post-->
 
 
-<img class="wechat-title-img"
-     src="">
+<img class="wechat-title-img" src="">
 
 
 <style>
@@ -165,8 +164,8 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h3 id="开发过程中需要一个类似于游戏技能冷却的效果"><a href="#开发过程中需要一个类似于游戏技能冷却的效果" class="headerlink" title="开发过程中需要一个类似于游戏技能冷却的效果"></a>开发过程中需要一个类似于游戏技能冷却的效果</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Sprite* progressSprite = Sprite::create(&quot;headportrait/time_clock_bg.png&quot;);</div><div class="line">mProgressTimer = ProgressTimer::create(progressSprite);</div><div class="line">this-&gt;addChild(mProgressTimer, 100);</div><div class="line">mProgressTimer-&gt;setType(ProgressTimer::Type::RADIAL);//设置进度条的形状</div><div class="line">mProgressTimer-&gt;stopAllActions();//停止动画</div><div class="line">mProgressTimer-&gt;setReverseProgress(true);//设置是逆时针</div></pre></td></tr></table></figure>
-<p>准备一个20秒旋转360度的动画(逐渐覆盖半透模板形成冷却效果;这里进行计时冷却动画的实现和时间控制)<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">ActionInterval* action_progress_to = Sequence::create(ProgressFromTo::create(20, 100, 0), nullptr);</div><div class="line">ProgressFromTo 从多少百分比到多少百分比的时间</div><div class="line">auto action_callback = CallFunc::create(CC_CALLBACK_0(PlayerBase::timeOverCallBack, this));</div><div class="line">mProgressTimer-&gt;runAction(Sequence::create(action_progress_to, action_callback, NULL));</div></pre></td></tr></table></figure></p>
+                <h3 id="开发过程中需要一个类似于游戏技能冷却的效果"><a href="#开发过程中需要一个类似于游戏技能冷却的效果" class="headerlink" title="开发过程中需要一个类似于游戏技能冷却的效果"></a>开发过程中需要一个类似于游戏技能冷却的效果</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Sprite* progressSprite = Sprite::create(&quot;headportrait/time_clock_bg.png&quot;);</span><br><span class="line">mProgressTimer = ProgressTimer::create(progressSprite);</span><br><span class="line">this-&gt;addChild(mProgressTimer, 100);</span><br><span class="line">mProgressTimer-&gt;setType(ProgressTimer::Type::RADIAL);//设置进度条的形状</span><br><span class="line">mProgressTimer-&gt;stopAllActions();//停止动画</span><br><span class="line">mProgressTimer-&gt;setReverseProgress(true);//设置是逆时针</span><br></pre></td></tr></table></figure>
+<p>准备一个20秒旋转360度的动画(逐渐覆盖半透模板形成冷却效果;这里进行计时冷却动画的实现和时间控制)<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ActionInterval* action_progress_to = Sequence::create(ProgressFromTo::create(20, 100, 0), nullptr);</span><br><span class="line">ProgressFromTo 从多少百分比到多少百分比的时间</span><br><span class="line">auto action_callback = CallFunc::create(CC_CALLBACK_0(PlayerBase::timeOverCallBack, this));</span><br><span class="line">mProgressTimer-&gt;runAction(Sequence::create(action_progress_to, action_callback, NULL));</span><br></pre></td></tr></table></figure></p>
 <p>差不多就是这样了</p>
 
                 <hr>
@@ -175,14 +174,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2016/02/17/2016-02-17-day/" data-toggle="tooltip" data-placement="top"
-                           title="Cocos2d-x LabelAtlas 遇到的问题记录">&larr; Previous Post</a>
+                        <a href="/2016/02/17/2016-02-17-day/" data-toggle="tooltip" data-placement="top" title="Cocos2d-x LabelAtlas 遇到的问题记录">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2016/02/15/2016-02-15-day/" data-toggle="tooltip" data-placement="top"
-                           title="Cocos2d-x 的自定义事件监听机制">Next Post &rarr;</a>
+                        <a href="/2016/02/15/2016-02-15-day/" data-toggle="tooltip" data-placement="top" title="Cocos2d-x 的自定义事件监听机制">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -190,10 +187,7 @@
                 
                 <!-- 多说评论框 start -->
                 <div class="comment">
-                    <div class="ds-thread"
-                         data-thread-key="2016/02/16/2016-02-16-day/"
-                         data-title="Cocos2d-x ProgressTimer的简单使用"
-                         data-url="http://yoursite.com/2016/02/16/2016-02-16-day/">
+                    <div class="ds-thread" data-thread-key="2016/02/16/2016-02-16-day/" data-title="Cocos2d-x ProgressTimer的简单使用" data-url="http://yoursite.com/2016/02/16/2016-02-16-day/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -275,7 +269,7 @@
 
                 
                     <li>
-                        <a target="_blank"  href="https://github.com/gamerzh">
+                        <a target="_blank" href="https://github.com/gamerzh">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>

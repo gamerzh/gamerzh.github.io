@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,8 +43,8 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
-" data-ishome = "false" >
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -119,8 +119,7 @@
 <!--only post-->
 
 
-<img class="wechat-title-img"
-     src="">
+<img class="wechat-title-img" src="">
 
 
 <style>
@@ -165,22 +164,20 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h4 id="问题场景"><a href="#问题场景" class="headerlink" title="问题场景"></a>问题场景</h4><p>app的开发使用了cocos2d-x游戏框架，语言选择C++,在做IOS版本的微信分享的时候需要传入中文的内容描述，发现利用如下代码转化NSString的时候，显示结果是乱码<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">NSString* wxUrl = [[NSString alloc] initWithFormat:@&quot;%s&quot;,str.c_str()];</div></pre></td></tr></table></figure></p>
-<h4 id="通过google发现了一个可行的解决方案"><a href="#通过google发现了一个可行的解决方案" class="headerlink" title="通过google发现了一个可行的解决方案"></a>通过google发现了一个可行的解决方案</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">NSString *wxTitle= [[NSString alloc] initWithCString:title.c_str() encoding:NSUTF8StringEncoding];</div></pre></td></tr></table></figure>
+                <h4 id="问题场景"><a href="#问题场景" class="headerlink" title="问题场景"></a>问题场景</h4><p>app的开发使用了cocos2d-x游戏框架，语言选择C++,在做IOS版本的微信分享的时候需要传入中文的内容描述，发现利用如下代码转化NSString的时候，显示结果是乱码<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">NSString* wxUrl = [[NSString alloc] initWithFormat:@&quot;%s&quot;,str.c_str()];</span><br></pre></td></tr></table></figure></p>
+<h4 id="通过google发现了一个可行的解决方案"><a href="#通过google发现了一个可行的解决方案" class="headerlink" title="通过google发现了一个可行的解决方案"></a>通过google发现了一个可行的解决方案</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">NSString *wxTitle= [[NSString alloc] initWithCString:title.c_str() encoding:NSUTF8StringEncoding];</span><br></pre></td></tr></table></figure>
                 <hr>
                 
 
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2016/10/08/2016-10-08-day/" data-toggle="tooltip" data-placement="top"
-                           title="Android Bitmap占用的内存大小">&larr; Previous Post</a>
+                        <a href="/2016/10/08/2016-10-08-day/" data-toggle="tooltip" data-placement="top" title="Android Bitmap占用的内存大小">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2016/09/28/2016-09-28-day/" data-toggle="tooltip" data-placement="top"
-                           title="Bitmap 转 byte[]">Next Post &rarr;</a>
+                        <a href="/2016/09/28/2016-09-28-day/" data-toggle="tooltip" data-placement="top" title="Bitmap 转 byte[]">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -188,10 +185,7 @@
                 
                 <!-- 多说评论框 start -->
                 <div class="comment">
-                    <div class="ds-thread"
-                         data-thread-key="2016/09/29/2016-09-29-day/"
-                         data-title="C++中文字符串转NSString时显示乱码"
-                         data-url="http://yoursite.com/2016/09/29/2016-09-29-day/">
+                    <div class="ds-thread" data-thread-key="2016/09/29/2016-09-29-day/" data-title="C++中文字符串转NSString时显示乱码" data-url="http://yoursite.com/2016/09/29/2016-09-29-day/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -273,7 +267,7 @@
 
                 
                     <li>
-                        <a target="_blank"  href="https://github.com/gamerzh">
+                        <a target="_blank" href="https://github.com/gamerzh">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>

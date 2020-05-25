@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,8 +43,8 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
-" data-ishome = "false" >
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -119,8 +119,7 @@
 <!--only post-->
 
 
-<img class="wechat-title-img"
-     src="">
+<img class="wechat-title-img" src="">
 
 
 <style>
@@ -172,7 +171,7 @@
 <p>…X<br>XXXX<br>…X<br>This is not a valid board - as battleships will always have a cell separating between them.</p>
 <p>Your algorithm should not modify the value of the board.</p>
 <p>####解题思路<br>由于board中的战舰之间确保有’.’隔开，因此遍历board，若某单元格为’X’，只需判断其左边和上边的相邻单元格是否也是’X’。如果左邻居或者上邻居单元格是’X’，则说明当前单元格是左边或者上边战舰的一部分；否则，令计数器+1</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public int countBattleships(char[][] board) &#123;</div><div class="line">        int len1 = board.length;</div><div class="line">        if(len1 == 0)&#123;</div><div class="line">            return 0;</div><div class="line">        &#125;</div><div class="line">        int len2 = board[0].length;</div><div class="line">        int ans = 0;</div><div class="line">        for (int i = 0; i &lt; len1; i++)&#123;</div><div class="line">            for(int j=0 ; j &lt; len2; j++)&#123;</div><div class="line">                if(board[i][j] == &apos;X&apos; &amp;&amp; (i == 0 || board[i-1][j] == &apos;.&apos;) &amp;&amp; (j == 0 || board[i][j-1] == &apos;.&apos;))&#123;</div><div class="line">                    ans ++;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return ans;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int countBattleships(char[][] board) &#123;</span><br><span class="line">        int len1 = board.length;</span><br><span class="line">        if(len1 == 0)&#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        int len2 = board[0].length;</span><br><span class="line">        int ans = 0;</span><br><span class="line">        for (int i = 0; i &lt; len1; i++)&#123;</span><br><span class="line">            for(int j=0 ; j &lt; len2; j++)&#123;</span><br><span class="line">                if(board[i][j] == &apos;X&apos; &amp;&amp; (i == 0 || board[i-1][j] == &apos;.&apos;) &amp;&amp; (j == 0 || board[i][j-1] == &apos;.&apos;))&#123;</span><br><span class="line">                    ans ++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
                 <hr>
                 
@@ -180,14 +179,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2017/03/17/2017-03-17-day/" data-toggle="tooltip" data-placement="top"
-                           title="leetcode 338. Counting Bits">&larr; Previous Post</a>
+                        <a href="/2017/03/17/2017-03-17-day/" data-toggle="tooltip" data-placement="top" title="leetcode 338. Counting Bits">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2017/02/08/2017-02-08-day/" data-toggle="tooltip" data-placement="top"
-                           title="Hamming Distance 练习题">Next Post &rarr;</a>
+                        <a href="/2017/02/08/2017-02-08-day/" data-toggle="tooltip" data-placement="top" title="Hamming Distance 练习题">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -195,10 +192,7 @@
                 
                 <!-- 多说评论框 start -->
                 <div class="comment">
-                    <div class="ds-thread"
-                         data-thread-key="2017/03/16/2017-03-16-day/"
-                         data-title="leetcode 419.Battleships in a Board"
-                         data-url="http://yoursite.com/2017/03/16/2017-03-16-day/">
+                    <div class="ds-thread" data-thread-key="2017/03/16/2017-03-16-day/" data-title="leetcode 419.Battleships in a Board" data-url="http://yoursite.com/2017/03/16/2017-03-16-day/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -280,7 +274,7 @@
 
                 
                     <li>
-                        <a target="_blank"  href="https://github.com/gamerzh">
+                        <a target="_blank" href="https://github.com/gamerzh">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>

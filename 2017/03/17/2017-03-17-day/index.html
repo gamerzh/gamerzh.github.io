@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,8 +43,8 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
-" data-ishome = "false" >
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -119,8 +119,7 @@
 <!--only post-->
 
 
-<img class="wechat-title-img"
-     src="">
+<img class="wechat-title-img" src="">
 
 
 <style>
@@ -169,7 +168,7 @@
 <p>Follow up:</p>
 <p>It is very easy to come up with a solution with run time O(n*sizeof(integer)). But can you do it in linear time O(n) /possibly in a single pass?<br>Space complexity should be O(n).<br>Can you do it like a boss? Do it without using any builtin function like __builtin_popcount in c++ or in any other language.</p>
 <p>####解题思路<br>一个数 * 2 就是把它的二进制形式全部左移一位，反过来看，一个数的二进制形式除去最后一位之外，其余位包含的1的总数，和其一半（/2）对应的二进制形式中的1的总数是相同的，也就是右移1位对应的结果。另外，最后1位是不是1，可以用i &amp; 1来判断。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"> public int[] countBits(int num) &#123;</div><div class="line">        int[] res = new int[num+1];</div><div class="line">        for(int i=1;i&lt;=num;i++)&#123;</div><div class="line">            res[i] = res[i &gt;&gt; 1] + (i &amp; 1);</div><div class="line">        &#125;</div><div class="line">        return res;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> public int[] countBits(int num) &#123;</span><br><span class="line">        int[] res = new int[num+1];</span><br><span class="line">        for(int i=1;i&lt;=num;i++)&#123;</span><br><span class="line">            res[i] = res[i &gt;&gt; 1] + (i &amp; 1);</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
                 <hr>
                 
@@ -177,14 +176,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2017/06/12/2017-06-12-day/" data-toggle="tooltip" data-placement="top"
-                           title="leetcode 561. Array Partition I">&larr; Previous Post</a>
+                        <a href="/2017/06/12/2017-06-12-day/" data-toggle="tooltip" data-placement="top" title="leetcode 561. Array Partition I">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2017/03/16/2017-03-16-day/" data-toggle="tooltip" data-placement="top"
-                           title="leetcode 419.Battleships in a Board">Next Post &rarr;</a>
+                        <a href="/2017/03/16/2017-03-16-day/" data-toggle="tooltip" data-placement="top" title="leetcode 419.Battleships in a Board">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -192,10 +189,7 @@
                 
                 <!-- 多说评论框 start -->
                 <div class="comment">
-                    <div class="ds-thread"
-                         data-thread-key="2017/03/17/2017-03-17-day/"
-                         data-title="leetcode 338. Counting Bits"
-                         data-url="http://yoursite.com/2017/03/17/2017-03-17-day/">
+                    <div class="ds-thread" data-thread-key="2017/03/17/2017-03-17-day/" data-title="leetcode 338. Counting Bits" data-url="http://yoursite.com/2017/03/17/2017-03-17-day/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -277,7 +271,7 @@
 
                 
                     <li>
-                        <a target="_blank"  href="https://github.com/gamerzh">
+                        <a target="_blank" href="https://github.com/gamerzh">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>

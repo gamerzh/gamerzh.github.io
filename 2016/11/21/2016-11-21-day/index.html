@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,8 +43,8 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
-" data-ishome = "false" >
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -119,8 +119,7 @@
 <!--only post-->
 
 
-<img class="wechat-title-img"
-     src="">
+<img class="wechat-title-img" src="">
 
 
 <style>
@@ -165,17 +164,17 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h3 id="API接口"><a href="#API接口" class="headerlink" title="API接口"></a>API接口</h3><p>目前正在使用的cocos2d-x的版本是3.x版本,在这个版本中多分辨率的支持接口有以下这些:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Director::getInstance()-&gt;getOpenGLView()-&gt;setDesignResolutionSize() //设计分辨率大小及模式</div><div class="line">Director::getInstance()-&gt;setContentScaleFactor() //内容缩放因子</div><div class="line">FileUtils::getInstance()-&gt;setSearchPaths() //资源搜索路径</div><div class="line">Director::getInstance()-&gt;getOpenGLView()-&gt;getFrameSize() //屏幕分辨率</div><div class="line">Director::getInstance()-&gt;getWinSize() //设计分辨率</div><div class="line">Director::getInstance()-&gt;getVisibleSize() //设计分辨率可视区域大小</div><div class="line">Director::getInstance()-&gt;getVisibleOrigin() //设计分辨率可视区域起点</div></pre></td></tr></table></figure></p>
+                <h3 id="API接口"><a href="#API接口" class="headerlink" title="API接口"></a>API接口</h3><p>目前正在使用的cocos2d-x的版本是3.x版本,在这个版本中多分辨率的支持接口有以下这些:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Director::getInstance()-&gt;getOpenGLView()-&gt;setDesignResolutionSize() //设计分辨率大小及模式</span><br><span class="line">Director::getInstance()-&gt;setContentScaleFactor() //内容缩放因子</span><br><span class="line">FileUtils::getInstance()-&gt;setSearchPaths() //资源搜索路径</span><br><span class="line">Director::getInstance()-&gt;getOpenGLView()-&gt;getFrameSize() //屏幕分辨率</span><br><span class="line">Director::getInstance()-&gt;getWinSize() //设计分辨率</span><br><span class="line">Director::getInstance()-&gt;getVisibleSize() //设计分辨率可视区域大小</span><br><span class="line">Director::getInstance()-&gt;getVisibleOrigin() //设计分辨率可视区域起点</span><br></pre></td></tr></table></figure></p>
 <h3 id="资源到设计尺寸"><a href="#资源到设计尺寸" class="headerlink" title="资源到设计尺寸"></a>资源到设计尺寸</h3><p>在Cocos里,官方把适配方案分为了两步,第一步是资源到设计尺寸的适配。</p>
 <p>因为设备尺寸是参差不齐的,当我们在开发游戏时并不会假定界面是基于某台设备来设计的。通常,我们会选择一个较为通用的尺寸来进行界面布局(比如1280*720),这时选取的这个尺寸称为设计尺寸。</p>
 <p>而从资源到设计尺寸的映射,其实就是图片到设计尺寸的映射。例如,我们为iPhone3G和iPhone4设计一款游戏。iPhone 3G的分辨率是320<em>480,而iPhone 4的分辨率是640</em>960。尽管这两种设备分辨率不同,但是屏幕尺寸一样大。在这样的情况下,我们使用同样的设计尺寸,只不过将iPhone4的图片资源换成2倍的即可。</p>
-<p>通过 cocos2d 的setContentScaleFactor函数可以设置所有加载资源的缩放因子:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">director-&gt;setContentScaleFactor(2);</div></pre></td></tr></table></figure></p>
+<p>通过 cocos2d 的setContentScaleFactor函数可以设置所有加载资源的缩放因子:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">director-&gt;setContentScaleFactor(2);</span><br></pre></td></tr></table></figure></p>
 <p>设置完之后,一张640<em>960的背景图在一个sprite显示时,高宽变为为320</em>480,而分辨率变为了原本的4倍。这样一来,iPhone 3G和iPhone 4的屏幕适配做好了。</p>
-<p>当然,因为改变了缩放因子,这两种设备设置加载的资源就不同,为了方便管理,我们会为它们设置不同的资源目录:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/Resource</div><div class="line">    /iphone</div><div class="line">    /iphonehd</div></pre></td></tr></table></figure></p>
-<p>并根据具体设备指定Resource下的默认资源路径:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">vector&lt;string&gt; searchPath;</div><div class="line">if (iPadHD)&#123;    </div><div class="line">    searchPath.push_back(&quot;iphonehd&quot;);</div><div class="line">&#125;else if(iPhone)&#123;</div><div class="line">    searchPath.push_back(&quot;iphone&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>//如果这两个目录下没有所需的资源,加载common目录资源<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">searchPath.push_back(&quot;common&quot;);</div><div class="line">FileUtils::getInstance()-&gt;setSearchPaths(searchPath);</div></pre></td></tr></table></figure></p>
+<p>当然,因为改变了缩放因子,这两种设备设置加载的资源就不同,为了方便管理,我们会为它们设置不同的资源目录:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/Resource</span><br><span class="line">    /iphone</span><br><span class="line">    /iphonehd</span><br></pre></td></tr></table></figure></p>
+<p>并根据具体设备指定Resource下的默认资源路径:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vector&lt;string&gt; searchPath;</span><br><span class="line">if (iPadHD)&#123;    </span><br><span class="line">    searchPath.push_back(&quot;iphonehd&quot;);</span><br><span class="line">&#125;else if(iPhone)&#123;</span><br><span class="line">    searchPath.push_back(&quot;iphone&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>//如果这两个目录下没有所需的资源,加载common目录资源<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">searchPath.push_back(&quot;common&quot;);</span><br><span class="line">FileUtils::getInstance()-&gt;setSearchPaths(searchPath);</span><br></pre></td></tr></table></figure></p>
 <p>现在iPhone 3G近乎绝迹,大部分iOS设备都是高清设备。所以,不必考虑为iPhone设备设置普清图。</p>
-<h3 id="从设计分辨率到屏幕分辨率"><a href="#从设计分辨率到屏幕分辨率" class="headerlink" title="从设计分辨率到屏幕分辨率"></a>从设计分辨率到屏幕分辨率</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">setDesignResolutionSize(DW, DH, resolutionPolicy)</div></pre></td></tr></table></figure>
+<h3 id="从设计分辨率到屏幕分辨率"><a href="#从设计分辨率到屏幕分辨率" class="headerlink" title="从设计分辨率到屏幕分辨率"></a>从设计分辨率到屏幕分辨率</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">setDesignResolutionSize(DW, DH, resolutionPolicy)</span><br></pre></td></tr></table></figure>
 <p>有三个参数，设计分辨率宽，设计分辨率高，分辨率策略。</p>
 <p>前两个很好理解，复杂点在分辨率策略的选择上。</p>
 <p>适配方案resolutionPolicy有五种选择:</p>
@@ -186,7 +185,7 @@
 <li>ResolutionPolicy::FIXED_HEIGHT 保持传入的设计分辨率高度不变,根据屏幕分辨率修正设计分辨率的宽度。(按照适配尺寸的宽度将屏幕撑满,宽度可根据屏幕的分辨率拉伸或者是裁剪)</li>
 <li>ResolutionPolicy::FIXED_WIDTH 保持传入的设计分辨率宽度不变,根据屏幕分辨率修正设计分辨率的高度。</li>
 </ul>
-<p><a href="http://www.tairan.com/archives/4809/" target="_blank" rel="external">参考链接1</a><br><a href="http://rungame.me/blog/2015/11/09/cocos-resolution/" target="_blank" rel="external">参考链接2</a></p>
+<p><a href="http://www.tairan.com/archives/4809/" target="_blank" rel="noopener">参考链接1</a><br><a href="http://rungame.me/blog/2015/11/09/cocos-resolution/" target="_blank" rel="noopener">参考链接2</a></p>
 
                 <hr>
                 
@@ -194,14 +193,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2017/02/08/2017-02-08-day/" data-toggle="tooltip" data-placement="top"
-                           title="Hamming Distance 练习题">&larr; Previous Post</a>
+                        <a href="/2017/02/08/2017-02-08-day/" data-toggle="tooltip" data-placement="top" title="Hamming Distance 练习题">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2016/10/16/2016-10-16-day/" data-toggle="tooltip" data-placement="top"
-                           title="微信图片分享">Next Post &rarr;</a>
+                        <a href="/2016/10/16/2016-10-16-day/" data-toggle="tooltip" data-placement="top" title="微信图片分享">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -209,10 +206,7 @@
                 
                 <!-- 多说评论框 start -->
                 <div class="comment">
-                    <div class="ds-thread"
-                         data-thread-key="2016/11/21/2016-11-21-day/"
-                         data-title="Cocos2d-x 多分辨率支持策略和原理"
-                         data-url="http://yoursite.com/2016/11/21/2016-11-21-day/">
+                    <div class="ds-thread" data-thread-key="2016/11/21/2016-11-21-day/" data-title="Cocos2d-x 多分辨率支持策略和原理" data-url="http://yoursite.com/2016/11/21/2016-11-21-day/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -294,7 +288,7 @@
 
                 
                     <li>
-                        <a target="_blank"  href="https://github.com/gamerzh">
+                        <a target="_blank" href="https://github.com/gamerzh">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>

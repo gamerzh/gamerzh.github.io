@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        Lua中and,or的一些特殊用法｜qiuzhong&#39;s blog
+        Unity 学习笔记2｜qiuzhong&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2018/11/09/2018-11-09-day/">
+    <link rel="canonical" href="http://yoursite.com/2020/05/25/2020-05-25-day/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -136,12 +136,12 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>Lua中and,or的一些特殊用法</h1>
+                    <h1>Unity 学习笔记2</h1>
                     
                     <span class="meta">
                          作者 qiuzhong
                         <span>
-                          日期 2018-11-09
+                          日期 2020-05-25
                          </span>
                     </span>
                     <div class="tags text-center">
@@ -153,7 +153,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            Lua中and,or的一些特殊用法
+            Unity 学习笔记2
         </span>
     </div>
 </header>
@@ -164,21 +164,23 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <p>先说and：我们知道and是取与，与就是0 and 0 = 0、0 and 1 = 0、1 and 1 = 1，也就是说有一个为0值就为0，全为1表达式值才为1，所以，当and的第一个操作数为0的时候，我们就没有必要看后面的操作数了，此时表达式的值已经为0，我们就把第一个为0的操作数返回即可；如果第一个操作数为1，那么整个表达式的值就取决于第二个操作数了，第二个为0表达式值为0，第二个为1表达式值为1，所以因为第二个操作数是啥表达式值就是啥，那么我们就把第二个操作数返回就行了。</p>
-<p>再说or,也是一个道理：or是取或，或就是0 or 0 = 0、0 or 1 = 1、1 or 1 = 1，也就是说有一个为1值就为1，全为0表达式值才为0，所以，当or的第一个操作数为1的时候，我们就没有必要看后面的操作数了，此时表达式的值已经为1，我们就把第一个为1的操作数返回即可；如果第一个操作数为0，那么整个表达式的值就取决于第二个操作数了，第二个为0表达式值为0，第二个为1表达式值为1，所以因为第二个操作数是啥表达式值就是啥，那么我们就把第二个操作数返回就行了。</p>
+                <h3 id="Unity当中移动物体的方法"><a href="#Unity当中移动物体的方法" class="headerlink" title="Unity当中移动物体的方法"></a>Unity当中移动物体的方法</h3><h4 id="方案1"><a href="#方案1" class="headerlink" title="方案1"></a>方案1</h4><pre><code>Transform SetPosition 解释：直接改变物体的位置，适合非物理碰撞的移动；
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">transform.position  = ...</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="方案2"><a href="#方案2" class="headerlink" title="方案2"></a>方案2</h4><pre><code>Transform Translate 解释：跟第一种类似，适合非物理的移动；
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">transform.Translate(...)</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="方案3"><a href="#方案3" class="headerlink" title="方案3"></a>方案3</h4><pre><code>Rigidbody MovePosition 解释：跟上面两种类似，但是很少用；
+</code></pre><h4 id="方案4"><a href="#方案4" class="headerlink" title="方案4"></a>方案4</h4><pre><code>Rigidbody AddForce 解释：给物体施加力的作用，适合物理类移动；
+</code></pre><h4 id="方案5"><a href="#方案5" class="headerlink" title="方案5"></a>方案5</h4><pre><code>Rigidbody SetVelocity 解释：直接给物体设定速度，适合物理类移动
+</code></pre><p>PS: 如果你的物体移动在碰撞时抖动，考虑是否用了物理的方式移动物体；如果物体被设为Kinematic，则只能用前三种方式（直接改变位置）移动物体；</p>
 
                 <hr>
                 
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2018/11/15/2018-11-15-day/" data-toggle="tooltip" data-placement="top" title="Lua中table常用的四种遍历方式">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2018/08/26/2018-08-26-day/" data-toggle="tooltip" data-placement="top" title="12种不宜使用的Javascript语法">Next Post &rarr;</a>
+                        <a href="/2020/05/24/2020-05-24-day/" data-toggle="tooltip" data-placement="top" title="Unity 学习笔记1">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -186,7 +188,7 @@
                 
                 <!-- 多说评论框 start -->
                 <div class="comment">
-                    <div class="ds-thread" data-thread-key="2018/11/09/2018-11-09-day/" data-title="Lua中and,or的一些特殊用法" data-url="http://yoursite.com/2018/11/09/2018-11-09-day/">
+                    <div class="ds-thread" data-thread-key="2020/05/25/2020-05-25-day/" data-title="Unity 学习笔记2" data-url="http://yoursite.com/2020/05/25/2020-05-25-day/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -201,7 +203,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Unity当中移动物体的方法"><span class="toc-text">Unity当中移动物体的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方案1"><span class="toc-text">方案1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方案2"><span class="toc-text">方案2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方案3"><span class="toc-text">方案3</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方案4"><span class="toc-text">方案4</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方案5"><span class="toc-text">方案5</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>

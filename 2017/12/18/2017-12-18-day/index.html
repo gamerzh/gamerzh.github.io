@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,8 +43,8 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
-" data-ishome = "false" >
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -119,8 +119,7 @@
 <!--only post-->
 
 
-<img class="wechat-title-img"
-     src="">
+<img class="wechat-title-img" src="">
 
 
 <style>
@@ -166,8 +165,8 @@
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
                 <p>No matter what happens, even if the stars fall, I will live.</p>
-<p>最近刚做完微信分享的接入,其中需要截屏并分享的功能<br>cocos2d 愉快的告诉我,朋友别造轮子啦，我们给你做好啦<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">local fileName =&quot;test.png&quot;</div><div class="line">cc.utils:captureScreen(function(succeed, outputFile)</div><div class="line">	print(&quot;wechat share 1 &quot;)</div><div class="line">	if succeed then</div><div class="line">		print(&quot;截屏成功&quot;)</div><div class="line">	else</div><div class="line">		print(&quot;截屏失败&quot;)</div><div class="line">	end</div><div class="line">end, fileName)</div></pre></td></tr></table></figure></p>
-<p>是不是很爽,但是需求总是会变的,当需求变成分享出去的图片是场景里没有的，而且还是动态需要绘制后才行的<br>这时候心里有句话。。。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">local fileName = &quot;test.png&quot;--路径最好放在SD卡上，不然Android会取不到图片的</div><div class="line">local node_container = cc.Layer:create()-- 在layer上加自己想要的内容就可以啦</div><div class="line">local render_texture = cc.RenderTexture:create(720,1280)</div><div class="line">--开始截屏</div><div class="line">render_texture:begin()</div><div class="line">--截self.node_container包含的内容</div><div class="line">node_container:visit()</div><div class="line">--关闭</div><div class="line">render_texture:endToLua()</div><div class="line">--调用</div><div class="line">local result = render_texture:saveToFile(fileName,cc.IMAGE_FORMAT_PNG)</div><div class="line">--图片保存到本地，然后就可以调用分享啦</div></pre></td></tr></table></figure></p>
+<p>最近刚做完微信分享的接入,其中需要截屏并分享的功能<br>cocos2d 愉快的告诉我,朋友别造轮子啦，我们给你做好啦<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">local fileName =&quot;test.png&quot;</span><br><span class="line">cc.utils:captureScreen(function(succeed, outputFile)</span><br><span class="line">	print(&quot;wechat share 1 &quot;)</span><br><span class="line">	if succeed then</span><br><span class="line">		print(&quot;截屏成功&quot;)</span><br><span class="line">	else</span><br><span class="line">		print(&quot;截屏失败&quot;)</span><br><span class="line">	end</span><br><span class="line">end, fileName)</span><br></pre></td></tr></table></figure></p>
+<p>是不是很爽,但是需求总是会变的,当需求变成分享出去的图片是场景里没有的，而且还是动态需要绘制后才行的<br>这时候心里有句话。。。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">local fileName = &quot;test.png&quot;--路径最好放在SD卡上，不然Android会取不到图片的</span><br><span class="line">local node_container = cc.Layer:create()-- 在layer上加自己想要的内容就可以啦</span><br><span class="line">local render_texture = cc.RenderTexture:create(720,1280)</span><br><span class="line">--开始截屏</span><br><span class="line">render_texture:begin()</span><br><span class="line">--截self.node_container包含的内容</span><br><span class="line">node_container:visit()</span><br><span class="line">--关闭</span><br><span class="line">render_texture:endToLua()</span><br><span class="line">--调用</span><br><span class="line">local result = render_texture:saveToFile(fileName,cc.IMAGE_FORMAT_PNG)</span><br><span class="line">--图片保存到本地，然后就可以调用分享啦</span><br></pre></td></tr></table></figure></p>
 
                 <hr>
                 
@@ -175,14 +174,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2018/01/12/2018-01-12-day/" data-toggle="tooltip" data-placement="top"
-                           title="Android App运行时发生OOM的原因你知道哪几种？如何避免？">&larr; Previous Post</a>
+                        <a href="/2018/01/12/2018-01-12-day/" data-toggle="tooltip" data-placement="top" title="Android App运行时发生OOM的原因你知道哪几种？如何避免？">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2017/11/10/2017-11-10-day/" data-toggle="tooltip" data-placement="top"
-                           title="Unity3D 学习手札">Next Post &rarr;</a>
+                        <a href="/2017/11/10/2017-11-10-day/" data-toggle="tooltip" data-placement="top" title="Unity3D 学习手札">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -190,10 +187,7 @@
                 
                 <!-- 多说评论框 start -->
                 <div class="comment">
-                    <div class="ds-thread"
-                         data-thread-key="2017/12/18/2017-12-18-day/"
-                         data-title="cocos2d-x 截屏相关的内容"
-                         data-url="http://yoursite.com/2017/12/18/2017-12-18-day/">
+                    <div class="ds-thread" data-thread-key="2017/12/18/2017-12-18-day/" data-title="cocos2d-x 截屏相关的内容" data-url="http://yoursite.com/2017/12/18/2017-12-18-day/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -275,7 +269,7 @@
 
                 
                     <li>
-                        <a target="_blank"  href="https://github.com/gamerzh">
+                        <a target="_blank" href="https://github.com/gamerzh">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,8 +43,8 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
-" data-ishome = "false" >
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -119,8 +119,7 @@
 <!--only post-->
 
 
-<img class="wechat-title-img"
-     src="">
+<img class="wechat-title-img" src="">
 
 
 <style>
@@ -165,8 +164,8 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h2 id="EventListenerCustom的使用"><a href="#EventListenerCustom的使用" class="headerlink" title="EventListenerCustom的使用"></a>EventListenerCustom的使用</h2><p>最近发现可以通过cocos2d-x的事件驱动机制来控制UI,而不是所有的UI都需要在update中完成<br>EventListenerCustom只会在触发的时候执行一次UI线程，比起一直在update中等待会节省很多资源<br>EventListenerCustom在使用的时候后需要先注册<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"> _listener2 = EventListenerCustom::create(&quot;game_custom_event2&quot;, [=](EventCustom* event)&#123;</div><div class="line"> std::string str(&quot;Custom event 2 received, &quot;);</div><div class="line"> char* buf = static_cast&lt;char*&gt;(event-&gt;getUserData());</div><div class="line"> str += buf;</div><div class="line"> str += &quot; times&quot;;</div><div class="line"> statusLabel2-&gt;setString(str.c_str());</div><div class="line"> &#125;); </div><div class="line">_eventDispatcher-&gt;addEventListenerWithFixedPriority(_listener2, 1);</div></pre></td></tr></table></figure></p>
-<p>触发事件的代码如下实例<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"> static int count = 0;</div><div class="line">++count;</div><div class="line">char* buf = new char[10];</div><div class="line">sprintf(buf, &quot;%d&quot;, count);</div><div class="line">EventCustom event(&quot;game_custom_event2&quot;);</div><div class="line"> event.setUserData(buf);</div><div class="line">_eventDispatcher-&gt;dispatchEvent(&amp;event);</div></pre></td></tr></table></figure></p>
+                <h2 id="EventListenerCustom的使用"><a href="#EventListenerCustom的使用" class="headerlink" title="EventListenerCustom的使用"></a>EventListenerCustom的使用</h2><p>最近发现可以通过cocos2d-x的事件驱动机制来控制UI,而不是所有的UI都需要在update中完成<br>EventListenerCustom只会在触发的时候执行一次UI线程，比起一直在update中等待会节省很多资源<br>EventListenerCustom在使用的时候后需要先注册<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> _listener2 = EventListenerCustom::create(&quot;game_custom_event2&quot;, [=](EventCustom* event)&#123;</span><br><span class="line"> std::string str(&quot;Custom event 2 received, &quot;);</span><br><span class="line"> char* buf = static_cast&lt;char*&gt;(event-&gt;getUserData());</span><br><span class="line"> str += buf;</span><br><span class="line"> str += &quot; times&quot;;</span><br><span class="line"> statusLabel2-&gt;setString(str.c_str());</span><br><span class="line"> &#125;); </span><br><span class="line">_eventDispatcher-&gt;addEventListenerWithFixedPriority(_listener2, 1);</span><br></pre></td></tr></table></figure></p>
+<p>触发事件的代码如下实例<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> static int count = 0;</span><br><span class="line">++count;</span><br><span class="line">char* buf = new char[10];</span><br><span class="line">sprintf(buf, &quot;%d&quot;, count);</span><br><span class="line">EventCustom event(&quot;game_custom_event2&quot;);</span><br><span class="line"> event.setUserData(buf);</span><br><span class="line">_eventDispatcher-&gt;dispatchEvent(&amp;event);</span><br></pre></td></tr></table></figure></p>
 <p>在使用完后需要进行销毁 _eventDispatcher-&gt;removeEventListener(_listener)这个方法最好在onExit()中调用</p>
 
                 <hr>
@@ -175,14 +174,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2016/02/16/2016-02-16-day/" data-toggle="tooltip" data-placement="top"
-                           title="Cocos2d-x ProgressTimer的简单使用">&larr; Previous Post</a>
+                        <a href="/2016/02/16/2016-02-16-day/" data-toggle="tooltip" data-placement="top" title="Cocos2d-x ProgressTimer的简单使用">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2016/02/14/2016-02-14-day/" data-toggle="tooltip" data-placement="top"
-                           title="可以不爱，请不要伤害">Next Post &rarr;</a>
+                        <a href="/2016/02/14/2016-02-14-day/" data-toggle="tooltip" data-placement="top" title="可以不爱，请不要伤害">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -190,10 +187,7 @@
                 
                 <!-- 多说评论框 start -->
                 <div class="comment">
-                    <div class="ds-thread"
-                         data-thread-key="2016/02/15/2016-02-15-day/"
-                         data-title="Cocos2d-x 的自定义事件监听机制"
-                         data-url="http://yoursite.com/2016/02/15/2016-02-15-day/">
+                    <div class="ds-thread" data-thread-key="2016/02/15/2016-02-15-day/" data-title="Cocos2d-x 的自定义事件监听机制" data-url="http://yoursite.com/2016/02/15/2016-02-15-day/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -275,7 +269,7 @@
 
                 
                     <li>
-                        <a target="_blank"  href="https://github.com/gamerzh">
+                        <a target="_blank" href="https://github.com/gamerzh">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>

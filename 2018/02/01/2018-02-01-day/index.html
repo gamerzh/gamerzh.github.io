@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,8 +43,8 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
-" data-ishome = "false" >
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -119,8 +119,7 @@
 <!--only post-->
 
 
-<img class="wechat-title-img"
-     src="">
+<img class="wechat-title-img" src="">
 
 
 <style>
@@ -172,11 +171,11 @@
 <p>Input: J = “aA”, S = “aAAbbbb”<br>Output: 3<br>Example 2:</p>
 <p>Input: J = “z”, S = “ZZ”<br>Output: 0<br>Note:</p>
 <p>S and J will consist of letters and have length at most 50.<br>The characters in J are distinct.</p>
-<p>直接想到的方案是这样的:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public int numJewelsInStones(String J, String S) &#123;</div><div class="line">        char[] jChar = J.toCharArray();</div><div class="line">        char[] sChar = S.toCharArray();</div><div class="line">        int num = 0;</div><div class="line">        for(int i =0; i&lt; jChar.length;i++)&#123;</div><div class="line">            for(int j=0;j&lt;sChar.length;j++)&#123;</div><div class="line">                if(jChar[i] == sChar[j])&#123;</div><div class="line">                    num++;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return num;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>直接想到的方案是这样的:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int numJewelsInStones(String J, String S) &#123;</span><br><span class="line">        char[] jChar = J.toCharArray();</span><br><span class="line">        char[] sChar = S.toCharArray();</span><br><span class="line">        int num = 0;</span><br><span class="line">        for(int i =0; i&lt; jChar.length;i++)&#123;</span><br><span class="line">            for(int j=0;j&lt;sChar.length;j++)&#123;</span><br><span class="line">                if(jChar[i] == sChar[j])&#123;</span><br><span class="line">                    num++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>虽然通过了网站的测试用例,但是我加了一个测试用例，发现了这个解法是有问题的，例如输入“aAa”和”aAAbbbb”,结果并不是3.</p>
-<p>在讨论区看到了一个比较有趣的解法:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public int numJewelsInStones(String J, String S) &#123;</div><div class="line">        int[] map = new int[58];</div><div class="line">        int result = 0;</div><div class="line">        for(char c:S.toCharArray())&#123;</div><div class="line">            map[c-&apos;A&apos;]++;</div><div class="line">        &#125;</div><div class="line">        for(char c:J.toCharArray())&#123;</div><div class="line">            result += map[c-&apos;A&apos;];</div><div class="line">        &#125;</div><div class="line">        return result;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在讨论区看到了一个比较有趣的解法:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int numJewelsInStones(String J, String S) &#123;</span><br><span class="line">        int[] map = new int[58];</span><br><span class="line">        int result = 0;</span><br><span class="line">        for(char c:S.toCharArray())&#123;</span><br><span class="line">            map[c-&apos;A&apos;]++;</span><br><span class="line">        &#125;</span><br><span class="line">        for(char c:J.toCharArray())&#123;</span><br><span class="line">            result += map[c-&apos;A&apos;];</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>但是这个解法依然没有解决J字符串包含重复字符的问题</p>
-<p>最后看到了一个利用HashSet来解决的:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">    public int numJewelsInStones(String J, String S) &#123;</div><div class="line">        Set&lt;Character&gt; set = new HashSet&lt;&gt;();</div><div class="line">        for (Character c: J.toCharArray()) &#123;</div><div class="line">            set.add(c);</div><div class="line">        &#125;</div><div class="line">        int count = 0;</div><div class="line">        for (Character c: S.toCharArray()) &#123;</div><div class="line">            if (set.contains(c)) &#123;</div><div class="line">                count++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return count;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>最后看到了一个利用HashSet来解决的:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int numJewelsInStones(String J, String S) &#123;</span><br><span class="line">        Set&lt;Character&gt; set = new HashSet&lt;&gt;();</span><br><span class="line">        for (Character c: J.toCharArray()) &#123;</span><br><span class="line">            set.add(c);</span><br><span class="line">        &#125;</span><br><span class="line">        int count = 0;</span><br><span class="line">        for (Character c: S.toCharArray()) &#123;</span><br><span class="line">            if (set.contains(c)) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
                 <hr>
                 
@@ -184,14 +183,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2018/06/12/2018-06-12-day/" data-toggle="tooltip" data-placement="top"
-                           title="LeetCode 48.旋转图像">&larr; Previous Post</a>
+                        <a href="/2018/06/12/2018-06-12-day/" data-toggle="tooltip" data-placement="top" title="LeetCode 48.旋转图像">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2018/01/19/2018-01-19-day/" data-toggle="tooltip" data-placement="top"
-                           title="一道简单的算法题">Next Post &rarr;</a>
+                        <a href="/2018/01/19/2018-01-19-day/" data-toggle="tooltip" data-placement="top" title="一道简单的算法题">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -199,10 +196,7 @@
                 
                 <!-- 多说评论框 start -->
                 <div class="comment">
-                    <div class="ds-thread"
-                         data-thread-key="2018/02/01/2018-02-01-day/"
-                         data-title="LeetCode 771.Jewels and Stones"
-                         data-url="http://yoursite.com/2018/02/01/2018-02-01-day/">
+                    <div class="ds-thread" data-thread-key="2018/02/01/2018-02-01-day/" data-title="LeetCode 771.Jewels and Stones" data-url="http://yoursite.com/2018/02/01/2018-02-01-day/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -284,7 +278,7 @@
 
                 
                     <li>
-                        <a target="_blank"  href="https://github.com/gamerzh">
+                        <a target="_blank" href="https://github.com/gamerzh">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>

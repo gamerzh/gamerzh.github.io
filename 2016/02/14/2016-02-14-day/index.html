@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,8 +43,8 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
-" data-ishome = "false" >
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -119,8 +119,7 @@
 <!--only post-->
 
 
-<img class="wechat-title-img"
-     src="">
+<img class="wechat-title-img" src="">
 
 
 <style>
@@ -165,7 +164,7 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h2 id="cocos2d-x如何在非主线程里调用UI线程的内容"><a href="#cocos2d-x如何在非主线程里调用UI线程的内容" class="headerlink" title="cocos2d-x如何在非主线程里调用UI线程的内容"></a>cocos2d-x如何在非主线程里调用UI线程的内容</h2><p>最近的工作都是围绕一款联网棋牌游戏展开的,作为客户端开发的我,记录一下最近遇到对的问题<br>长连接我选择了ODsocket,选择的原因是我觉得它是开源的，且使用起来比较方便,而且我对C++的熟悉程度并不能让我很快的造一个轮子<br>所以就先借了开源的现成的轮子<br>在开发过程中我发现，我收到消息的线程并不是主线程,无法完成UI操作<br>一开始我采用的利用各种变量来控制,在update中一直检查变量的变化,这样实在太繁琐了<br>后来发现原来cocos2d-x已经提供了这个机制，类似Android的runonUiThread方法<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Director ::getInstance ()-&gt; getScheduler()-&gt; performFunctionInCocosThread ([&amp;, this ]&#123;// TODO 可以执行UI线程&#125;);</div></pre></td></tr></table></figure></p>
+                <h2 id="cocos2d-x如何在非主线程里调用UI线程的内容"><a href="#cocos2d-x如何在非主线程里调用UI线程的内容" class="headerlink" title="cocos2d-x如何在非主线程里调用UI线程的内容"></a>cocos2d-x如何在非主线程里调用UI线程的内容</h2><p>最近的工作都是围绕一款联网棋牌游戏展开的,作为客户端开发的我,记录一下最近遇到对的问题<br>长连接我选择了ODsocket,选择的原因是我觉得它是开源的，且使用起来比较方便,而且我对C++的熟悉程度并不能让我很快的造一个轮子<br>所以就先借了开源的现成的轮子<br>在开发过程中我发现，我收到消息的线程并不是主线程,无法完成UI操作<br>一开始我采用的利用各种变量来控制,在update中一直检查变量的变化,这样实在太繁琐了<br>后来发现原来cocos2d-x已经提供了这个机制，类似Android的runonUiThread方法<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Director ::getInstance ()-&gt; getScheduler()-&gt; performFunctionInCocosThread ([&amp;, this ]&#123;// TODO 可以执行UI线程&#125;);</span><br></pre></td></tr></table></figure></p>
 
                 <hr>
                 
@@ -173,14 +172,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2016/02/15/2016-02-15-day/" data-toggle="tooltip" data-placement="top"
-                           title="Cocos2d-x 的自定义事件监听机制">&larr; Previous Post</a>
+                        <a href="/2016/02/15/2016-02-15-day/" data-toggle="tooltip" data-placement="top" title="Cocos2d-x 的自定义事件监听机制">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2016/02/07/2016-02-07-day/" data-toggle="tooltip" data-placement="top"
-                           title="猴年快乐">Next Post &rarr;</a>
+                        <a href="/2016/02/07/2016-02-07-day/" data-toggle="tooltip" data-placement="top" title="猴年快乐">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -188,10 +185,7 @@
                 
                 <!-- 多说评论框 start -->
                 <div class="comment">
-                    <div class="ds-thread"
-                         data-thread-key="2016/02/14/2016-02-14-day/"
-                         data-title="可以不爱，请不要伤害"
-                         data-url="http://yoursite.com/2016/02/14/2016-02-14-day/">
+                    <div class="ds-thread" data-thread-key="2016/02/14/2016-02-14-day/" data-title="可以不爱，请不要伤害" data-url="http://yoursite.com/2016/02/14/2016-02-14-day/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -273,7 +267,7 @@
 
                 
                     <li>
-                        <a target="_blank"  href="https://github.com/gamerzh">
+                        <a target="_blank" href="https://github.com/gamerzh">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>

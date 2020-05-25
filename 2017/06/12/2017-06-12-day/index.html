@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,8 +43,8 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
-" data-ishome = "false" >
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -119,8 +119,7 @@
 <!--only post-->
 
 
-<img class="wechat-title-img"
-     src="">
+<img class="wechat-title-img" src="">
 
 
 <style>
@@ -166,8 +165,8 @@
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
                 <h3 id="Given-an-array-of-2n-integers-your-task-is-to-group-these-integers-into-n-pairs-of-integer-say-a1-b1-a2-b2-…-an-bn-which-makes-sum-of-min-ai-bi-for-all-i-from-1-to-n-as-large-as-possible"><a href="#Given-an-array-of-2n-integers-your-task-is-to-group-these-integers-into-n-pairs-of-integer-say-a1-b1-a2-b2-…-an-bn-which-makes-sum-of-min-ai-bi-for-all-i-from-1-to-n-as-large-as-possible" class="headerlink" title="Given an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1), (a2, b2), …, (an, bn) which makes sum of min(ai, bi) for all i from 1 to n as large as possible."></a>Given an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1), (a2, b2), …, (an, bn) which makes sum of min(ai, bi) for all i from 1 to n as large as possible.</h3><p>Output: 4<br>Explanation: n is 2, and the maximum sum of pairs is 4 = min(1, 2) + min(3, 4).<br>Note:<br>n is a positive integer, which is in the range of [1, 10000].<br>All the integers in the array will be in the range of [-10000, 10000].</p>
-<p>####解题思路<br>问题的关键其实在于排序,只要整个数组是有序的，问题就会变得非常简单，假设数组从小到大排列，那么2n位置上的数字相加的和一定是最小的。<br>然后随手写了个冒泡排序。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">for(int i = 0;i&lt;nums.length-1;i++)&#123;</div><div class="line">        for(int j = 0;j&lt;nums.length-1-i;j++)&#123;</div><div class="line">            if (nums[j] &gt; nums[j + 1]) &#123;</div><div class="line">		int temp = nums[j];</div><div class="line">		nums[j] = nums[j + 1];</div><div class="line">		nums[j + 1] = temp;</div><div class="line">	&#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<p>然后开心愉快的提交了代码,WTF!时间超时了,这是在搞事情啊。只能换个高效点的排序算法了。选了插入排序，问题解决。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">for( int i=0; i&lt;nums.length-1; i++ ) </div><div class="line">       &#123;	</div><div class="line">           for( int j=i+1; j&gt;0; j-- ) </div><div class="line">           &#123;</div><div class="line">               if( nums[j-1] &lt;= nums[j] )</div><div class="line">                   break;</div><div class="line">               int temp = nums[j];</div><div class="line">               nums[j] = nums[j-1];</div><div class="line">               nums[j-1] = temp;</div><div class="line">           &#125;</div><div class="line">       &#125;</div></pre></td></tr></table></figure></p>
+<p>####解题思路<br>问题的关键其实在于排序,只要整个数组是有序的，问题就会变得非常简单，假设数组从小到大排列，那么2n位置上的数字相加的和一定是最小的。<br>然后随手写了个冒泡排序。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(int i = 0;i&lt;nums.length-1;i++)&#123;</span><br><span class="line">        for(int j = 0;j&lt;nums.length-1-i;j++)&#123;</span><br><span class="line">            if (nums[j] &gt; nums[j + 1]) &#123;</span><br><span class="line">		int temp = nums[j];</span><br><span class="line">		nums[j] = nums[j + 1];</span><br><span class="line">		nums[j + 1] = temp;</span><br><span class="line">	&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后开心愉快的提交了代码,WTF!时间超时了,这是在搞事情啊。只能换个高效点的排序算法了。选了插入排序，问题解决。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for( int i=0; i&lt;nums.length-1; i++ ) </span><br><span class="line">       &#123;	</span><br><span class="line">           for( int j=i+1; j&gt;0; j-- ) </span><br><span class="line">           &#123;</span><br><span class="line">               if( nums[j-1] &lt;= nums[j] )</span><br><span class="line">                   break;</span><br><span class="line">               int temp = nums[j];</span><br><span class="line">               nums[j] = nums[j-1];</span><br><span class="line">               nums[j-1] = temp;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure></p>
 
                 <hr>
                 
@@ -175,14 +174,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2017/11/10/2017-11-10-day/" data-toggle="tooltip" data-placement="top"
-                           title="Unity3D 学习手札">&larr; Previous Post</a>
+                        <a href="/2017/11/10/2017-11-10-day/" data-toggle="tooltip" data-placement="top" title="Unity3D 学习手札">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2017/03/17/2017-03-17-day/" data-toggle="tooltip" data-placement="top"
-                           title="leetcode 338. Counting Bits">Next Post &rarr;</a>
+                        <a href="/2017/03/17/2017-03-17-day/" data-toggle="tooltip" data-placement="top" title="leetcode 338. Counting Bits">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -190,10 +187,7 @@
                 
                 <!-- 多说评论框 start -->
                 <div class="comment">
-                    <div class="ds-thread"
-                         data-thread-key="2017/06/12/2017-06-12-day/"
-                         data-title="leetcode 561. Array Partition I"
-                         data-url="http://yoursite.com/2017/06/12/2017-06-12-day/">
+                    <div class="ds-thread" data-thread-key="2017/06/12/2017-06-12-day/" data-title="leetcode 561. Array Partition I" data-url="http://yoursite.com/2017/06/12/2017-06-12-day/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -275,7 +269,7 @@
 
                 
                     <li>
-                        <a target="_blank"  href="https://github.com/gamerzh">
+                        <a target="_blank" href="https://github.com/gamerzh">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>

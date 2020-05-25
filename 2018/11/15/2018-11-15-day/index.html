@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,8 +43,8 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
-" data-ishome = "false" >
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -119,8 +119,7 @@
 <!--only post-->
 
 
-<img class="wechat-title-img"
-     src="">
+<img class="wechat-title-img" src="">
 
 
 <style>
@@ -165,26 +164,26 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <p>第一种遍历方式：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">for key, value in ipairs(table) do</div><div class="line">	</div><div class="line">end</div></pre></td></tr></table></figure></p>
+                <p>第一种遍历方式：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for key, value in ipairs(table) do</span><br><span class="line">	</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
 <p>注：这种方式的遍历只会从key为1的地方开始，一直以key递增1的顺序来遍历，若找到一个递增不是1的key就结束遍历，无论后面是否仍然是顺序的key。请看下面例子：</p>
-<p>Sample_1:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">local tab1 = </div><div class="line">&#123;</div><div class="line">	[1] = 1,</div><div class="line">	[2] = 2,</div><div class="line">	[3] = 3,</div><div class="line">	[4] = 4,</div><div class="line">&#125;</div><div class="line"> </div><div class="line">for key, value in ipairs(tab1) do</div><div class="line">	print(value)	--&gt;1 2 3 4</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<p>Sample_2:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">local tab2 = </div><div class="line">&#123;</div><div class="line">	[1] = 1,</div><div class="line">	[2] = 2,</div><div class="line">	[3] = 3,</div><div class="line">	[5] = 5,</div><div class="line">	[6] = 6,</div><div class="line">&#125;</div><div class="line">for key, value in ipairs(tab2) do</div><div class="line">	print(value)	--&gt;1 2 3</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<p>Sample_3:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">local tab3 = </div><div class="line">&#123;</div><div class="line">	[2] = 2,</div><div class="line">	[3] = 3,</div><div class="line">	[4] = 4,</div><div class="line">&#125;</div><div class="line"> </div><div class="line">for key, value in ipairs(tab3) do</div><div class="line">	print(value)	--&gt;没有打印</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<p>第二种遍历方式：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">for key, value in pairs(table) do</div><div class="line">	</div><div class="line">end</div></pre></td></tr></table></figure></p>
+<p>Sample_1:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">local tab1 = </span><br><span class="line">&#123;</span><br><span class="line">	[1] = 1,</span><br><span class="line">	[2] = 2,</span><br><span class="line">	[3] = 3,</span><br><span class="line">	[4] = 4,</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">for key, value in ipairs(tab1) do</span><br><span class="line">	print(value)	--&gt;1 2 3 4</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<p>Sample_2:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">local tab2 = </span><br><span class="line">&#123;</span><br><span class="line">	[1] = 1,</span><br><span class="line">	[2] = 2,</span><br><span class="line">	[3] = 3,</span><br><span class="line">	[5] = 5,</span><br><span class="line">	[6] = 6,</span><br><span class="line">&#125;</span><br><span class="line">for key, value in ipairs(tab2) do</span><br><span class="line">	print(value)	--&gt;1 2 3</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<p>Sample_3:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">local tab3 = </span><br><span class="line">&#123;</span><br><span class="line">	[2] = 2,</span><br><span class="line">	[3] = 3,</span><br><span class="line">	[4] = 4,</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">for key, value in ipairs(tab3) do</span><br><span class="line">	print(value)	--&gt;没有打印</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<p>第二种遍历方式：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for key, value in pairs(table) do</span><br><span class="line">	</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
 <p>注：这种方式的遍历是根据table中key的hash值排列的顺序来遍历，并非是table中key的排列顺序，并且不关心key是否从1开始和key是否以1递增。请看下面例子：</p>
-<p>Sample_1:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">local tab1 = </div><div class="line">&#123;</div><div class="line">	[1] = 1,</div><div class="line">	[2] = 2,</div><div class="line">	[3] = 3,</div><div class="line">	[4] = 4,</div><div class="line">&#125;</div><div class="line"> </div><div class="line">for key, value in pairs(tab1) do</div><div class="line">	print(value)	--&gt;1 2 4 3</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<p>Sample_2:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">local tab2 = </div><div class="line">&#123;</div><div class="line">	[1] = 1,</div><div class="line">	[2] = 2,</div><div class="line">	[3] = 3,</div><div class="line">	[5] = 5,</div><div class="line">	[6] = 6,</div><div class="line">&#125;</div><div class="line">for key, value in pairs(tab2) do</div><div class="line">	print(value)	--&gt;1 2 3</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<p>Sample_3:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">local tab3 = </div><div class="line">&#123;</div><div class="line">	[2] = 2,</div><div class="line">	[3] = 3,</div><div class="line">	[4] = 4,</div><div class="line">&#125;</div><div class="line"> </div><div class="line">for key, value in pairs(tab3) do</div><div class="line">	print(value)	--&gt;3 2 4</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<p>第三种遍历方式：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">for i=1, #(table) do</div><div class="line">	</div><div class="line">end</div></pre></td></tr></table></figure></p>
+<p>Sample_1:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">local tab1 = </span><br><span class="line">&#123;</span><br><span class="line">	[1] = 1,</span><br><span class="line">	[2] = 2,</span><br><span class="line">	[3] = 3,</span><br><span class="line">	[4] = 4,</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">for key, value in pairs(tab1) do</span><br><span class="line">	print(value)	--&gt;1 2 4 3</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<p>Sample_2:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">local tab2 = </span><br><span class="line">&#123;</span><br><span class="line">	[1] = 1,</span><br><span class="line">	[2] = 2,</span><br><span class="line">	[3] = 3,</span><br><span class="line">	[5] = 5,</span><br><span class="line">	[6] = 6,</span><br><span class="line">&#125;</span><br><span class="line">for key, value in pairs(tab2) do</span><br><span class="line">	print(value)	--&gt;1 2 3</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<p>Sample_3:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">local tab3 = </span><br><span class="line">&#123;</span><br><span class="line">	[2] = 2,</span><br><span class="line">	[3] = 3,</span><br><span class="line">	[4] = 4,</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">for key, value in pairs(tab3) do</span><br><span class="line">	print(value)	--&gt;3 2 4</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<p>第三种遍历方式：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for i=1, #(table) do</span><br><span class="line">	</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
 <p>注：这种方式的遍历关键的地方在于获取table的大小，#(table)只会从key为1的地方开始，一直以key递增1的顺序来遍历，若找到一个递增不是1的key就结束遍历并且返回table的大小，无论后面是否仍然是顺序的key。请看下面例子：</p>
-<p>Sample_1:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">local tab1 = </div><div class="line">&#123;</div><div class="line">	[1] = 1,</div><div class="line">	[2] = 2,</div><div class="line">	[3] = 3,</div><div class="line">	[4] = 4,</div><div class="line">&#125;</div><div class="line"> </div><div class="line">print(&quot;#table:&quot;..#(tab1))		--&gt;4</div><div class="line">for i = 1, #(tab1) do</div><div class="line">	print(tab1[i])	--&gt;1 2 3 4</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<p>Sample_2:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">local tab2 = </div><div class="line">&#123;</div><div class="line">	[1] = 1,</div><div class="line">	[2] = 2,</div><div class="line">	[3] = 3,</div><div class="line">	[5] = 5,</div><div class="line">	[6] = 6,</div><div class="line">&#125;</div><div class="line"> </div><div class="line">print(&quot;#table:&quot;..#(tab2))	--&gt;3</div><div class="line">for i = 1, #(tab2) do</div><div class="line">	print(tab2[i])</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<p>Sample_3:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">local tab3 = </div><div class="line">&#123;</div><div class="line">	[2] = 2,</div><div class="line">	[3] = 3,</div><div class="line">	[4] = 4,</div><div class="line">&#125;</div><div class="line"> </div><div class="line">print(&quot;#table:&quot;..#(tab3))	--&gt;0</div><div class="line">for i = 1, #(tab3) do</div><div class="line">	print(tab3[i])	--&gt;没有打印</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<p>第四种遍历方式：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">for i=1, table.maxn(table) do</div><div class="line">	</div><div class="line">end</div></pre></td></tr></table></figure></p>
+<p>Sample_1:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">local tab1 = </span><br><span class="line">&#123;</span><br><span class="line">	[1] = 1,</span><br><span class="line">	[2] = 2,</span><br><span class="line">	[3] = 3,</span><br><span class="line">	[4] = 4,</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">print(&quot;#table:&quot;..#(tab1))		--&gt;4</span><br><span class="line">for i = 1, #(tab1) do</span><br><span class="line">	print(tab1[i])	--&gt;1 2 3 4</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<p>Sample_2:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">local tab2 = </span><br><span class="line">&#123;</span><br><span class="line">	[1] = 1,</span><br><span class="line">	[2] = 2,</span><br><span class="line">	[3] = 3,</span><br><span class="line">	[5] = 5,</span><br><span class="line">	[6] = 6,</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">print(&quot;#table:&quot;..#(tab2))	--&gt;3</span><br><span class="line">for i = 1, #(tab2) do</span><br><span class="line">	print(tab2[i])</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<p>Sample_3:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">local tab3 = </span><br><span class="line">&#123;</span><br><span class="line">	[2] = 2,</span><br><span class="line">	[3] = 3,</span><br><span class="line">	[4] = 4,</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">print(&quot;#table:&quot;..#(tab3))	--&gt;0</span><br><span class="line">for i = 1, #(tab3) do</span><br><span class="line">	print(tab3[i])	--&gt;没有打印</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<p>第四种遍历方式：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for i=1, table.maxn(table) do</span><br><span class="line">	</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
 <p>注：这种方式的遍历和第三种方式差不多，关键的地方是在table.maxn(table)，table.maxn(table)的意思是获取table中最大值的key。在lua5.2版本table.maxn被移除，请看下面例子：</p>
-<p>Sample_1:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">local tab1 = </div><div class="line">&#123;</div><div class="line">	[1] = 1,</div><div class="line">	[2] = 2,</div><div class="line">	[3] = 3,</div><div class="line">	[4] = 4,</div><div class="line">&#125;</div><div class="line"> </div><div class="line">print(&quot;table.maxn:&quot;..table.maxn(tab1))		--&gt;4</div><div class="line">for i = 1, table.maxn(tab1) do</div><div class="line">	print(tab1[i])	--&gt;1 2 3 4</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<p>Sample_2:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">local tab2 = </div><div class="line">&#123;</div><div class="line">	[1] = 1,</div><div class="line">	[2] = 2,</div><div class="line">	[3] = 3,</div><div class="line">	[&quot;a&quot;] = 4,</div><div class="line">	[5] = 5,</div><div class="line">	[6] = 6,</div><div class="line">&#125;</div><div class="line"> </div><div class="line">print(&quot;table.maxn:&quot;..table.maxn(tab2))	--&gt;6</div><div class="line">for i = 1, table.maxn(tab2) do</div><div class="line">	print(tab2[i])	--&gt;1 2 3 nil 5 6</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<p>Sample_3:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">local tab3 = </div><div class="line">&#123;</div><div class="line">	[2] = 2,</div><div class="line">	[3] = 3,</div><div class="line">	[4] = 4,</div><div class="line">&#125;</div><div class="line"> </div><div class="line">print(&quot;table.maxn:&quot;..table.maxn(tab3))	--&gt;4</div><div class="line">for i = 1, table.maxn(tab2) do</div><div class="line">	print(tab3[i])	--&gt;nil 2 3 4 nil nil</div><div class="line">end</div></pre></td></tr></table></figure></p>
+<p>Sample_1:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">local tab1 = </span><br><span class="line">&#123;</span><br><span class="line">	[1] = 1,</span><br><span class="line">	[2] = 2,</span><br><span class="line">	[3] = 3,</span><br><span class="line">	[4] = 4,</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">print(&quot;table.maxn:&quot;..table.maxn(tab1))		--&gt;4</span><br><span class="line">for i = 1, table.maxn(tab1) do</span><br><span class="line">	print(tab1[i])	--&gt;1 2 3 4</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<p>Sample_2:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">local tab2 = </span><br><span class="line">&#123;</span><br><span class="line">	[1] = 1,</span><br><span class="line">	[2] = 2,</span><br><span class="line">	[3] = 3,</span><br><span class="line">	[&quot;a&quot;] = 4,</span><br><span class="line">	[5] = 5,</span><br><span class="line">	[6] = 6,</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">print(&quot;table.maxn:&quot;..table.maxn(tab2))	--&gt;6</span><br><span class="line">for i = 1, table.maxn(tab2) do</span><br><span class="line">	print(tab2[i])	--&gt;1 2 3 nil 5 6</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<p>Sample_3:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">local tab3 = </span><br><span class="line">&#123;</span><br><span class="line">	[2] = 2,</span><br><span class="line">	[3] = 3,</span><br><span class="line">	[4] = 4,</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">print(&quot;table.maxn:&quot;..table.maxn(tab3))	--&gt;4</span><br><span class="line">for i = 1, table.maxn(tab2) do</span><br><span class="line">	print(tab3[i])	--&gt;nil 2 3 4 nil nil</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
 
                 <hr>
                 
@@ -192,14 +191,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2020/05/22/2020-05-22-day/" data-toggle="tooltip" data-placement="top"
-                           title="Python基础整理和记录">&larr; Previous Post</a>
+                        <a href="/2020/05/22/2020-05-22-day/" data-toggle="tooltip" data-placement="top" title="Python基础整理和记录">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2018/11/09/2018-11-09-day/" data-toggle="tooltip" data-placement="top"
-                           title="Lua中and,or的一些特殊用法">Next Post &rarr;</a>
+                        <a href="/2018/11/09/2018-11-09-day/" data-toggle="tooltip" data-placement="top" title="Lua中and,or的一些特殊用法">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -207,10 +204,7 @@
                 
                 <!-- 多说评论框 start -->
                 <div class="comment">
-                    <div class="ds-thread"
-                         data-thread-key="2018/11/15/2018-11-15-day/"
-                         data-title="Lua中table常用的四种遍历方式"
-                         data-url="http://yoursite.com/2018/11/15/2018-11-15-day/">
+                    <div class="ds-thread" data-thread-key="2018/11/15/2018-11-15-day/" data-title="Lua中table常用的四种遍历方式" data-url="http://yoursite.com/2018/11/15/2018-11-15-day/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -292,7 +286,7 @@
 
                 
                     <li>
-                        <a target="_blank"  href="https://github.com/gamerzh">
+                        <a target="_blank" href="https://github.com/gamerzh">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>

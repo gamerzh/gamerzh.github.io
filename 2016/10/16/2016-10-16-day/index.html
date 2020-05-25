@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,8 +43,8 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
-" data-ishome = "false" >
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -119,8 +119,7 @@
 <!--only post-->
 
 
-<img class="wechat-title-img"
-     src="">
+<img class="wechat-title-img" src="">
 
 
 <style>
@@ -166,9 +165,9 @@
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
                 <p>这周在app中添加了微信分享的功能,具体的操作方式是利用cocos2d-x提供的截屏API，获取图片,然后通过微信的图片分享API分享给好友。在这个过程中遇到了一个坑,记录一下.</p>
-<p>一开始我使用的cocos2d-x的截屏API如下:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">//获取屏幕尺寸大小</div><div class="line">Size winSize = CCDirector::sharedDirector()-&gt;getWinSize();</div><div class="line">//创建RenderTexture，纹理图片大小为窗口大小winSize</div><div class="line">RenderTexture* screen = RenderTexture::create(winSize.width, winSize.height);</div><div class="line">//屏幕截图</div><div class="line">screen-&gt;begin();            //开始抓屏</div><div class="line">this-&gt;getParent()-&gt;visit(); //遍历当前场景Scene的所有子节点信息，画入screen中</div><div class="line">screen-&gt;end();              //结束抓屏</div><div class="line">//保存截图</div><div class="line">screen-&gt;saveToFile(&quot;ScreenShot.png&quot;, Image::Format::PNG); //保存为PNG格式</div></pre></td></tr></table></figure></p>
+<p>一开始我使用的cocos2d-x的截屏API如下:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//获取屏幕尺寸大小</span><br><span class="line">Size winSize = CCDirector::sharedDirector()-&gt;getWinSize();</span><br><span class="line">//创建RenderTexture，纹理图片大小为窗口大小winSize</span><br><span class="line">RenderTexture* screen = RenderTexture::create(winSize.width, winSize.height);</span><br><span class="line">//屏幕截图</span><br><span class="line">screen-&gt;begin();            //开始抓屏</span><br><span class="line">this-&gt;getParent()-&gt;visit(); //遍历当前场景Scene的所有子节点信息，画入screen中</span><br><span class="line">screen-&gt;end();              //结束抓屏</span><br><span class="line">//保存截图</span><br><span class="line">screen-&gt;saveToFile(&quot;ScreenShot.png&quot;, Image::Format::PNG); //保存为PNG格式</span><br></pre></td></tr></table></figure></p>
 <p>这个API截取的图片分享到微信后,微信显示的只有缩略图,点击缩略图，是没有高清大图的。</p>
-<p>后来发现新版本的cocos2d-x提供了一个新的API：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">std::string path =StringUtils::format(&quot;%s/mahjong_screen_shot.png&quot;,SD_CARD_PATH);</div><div class="line">utils::captureScreen(NULL ,path);</div></pre></td></tr></table></figure></p>
+<p>后来发现新版本的cocos2d-x提供了一个新的API：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">std::string path =StringUtils::format(&quot;%s/mahjong_screen_shot.png&quot;,SD_CARD_PATH);</span><br><span class="line">utils::captureScreen(NULL ,path);</span><br></pre></td></tr></table></figure></p>
 <p>这个API可以主动选择图片的保存路径,只要把保存路径修改为手机SD卡,分享的图片就可以显示高清原图了。</p>
 
                 <hr>
@@ -177,14 +176,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2016/11/21/2016-11-21-day/" data-toggle="tooltip" data-placement="top"
-                           title="Cocos2d-x 多分辨率支持策略和原理">&larr; Previous Post</a>
+                        <a href="/2016/11/21/2016-11-21-day/" data-toggle="tooltip" data-placement="top" title="Cocos2d-x 多分辨率支持策略和原理">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2016/10/11/2016-10-11-day/" data-toggle="tooltip" data-placement="top"
-                           title="Java单例设计模式">Next Post &rarr;</a>
+                        <a href="/2016/10/11/2016-10-11-day/" data-toggle="tooltip" data-placement="top" title="Java单例设计模式">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -192,10 +189,7 @@
                 
                 <!-- 多说评论框 start -->
                 <div class="comment">
-                    <div class="ds-thread"
-                         data-thread-key="2016/10/16/2016-10-16-day/"
-                         data-title="微信图片分享"
-                         data-url="http://yoursite.com/2016/10/16/2016-10-16-day/">
+                    <div class="ds-thread" data-thread-key="2016/10/16/2016-10-16-day/" data-title="微信图片分享" data-url="http://yoursite.com/2016/10/16/2016-10-16-day/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -277,7 +271,7 @@
 
                 
                     <li>
-                        <a target="_blank"  href="https://github.com/gamerzh">
+                        <a target="_blank" href="https://github.com/gamerzh">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>

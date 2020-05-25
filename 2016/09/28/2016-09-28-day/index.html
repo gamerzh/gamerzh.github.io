@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,8 +43,8 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
-" data-ishome = "false" >
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -119,8 +119,7 @@
 <!--only post-->
 
 
-<img class="wechat-title-img"
-     src="">
+<img class="wechat-title-img" src="">
 
 
 <style>
@@ -165,23 +164,21 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h5 id="今天在做Android微信分享的时候发现微信有个图片的参数需要传入byte"><a href="#今天在做Android微信分享的时候发现微信有个图片的参数需要传入byte" class="headerlink" title="今天在做Android微信分享的时候发现微信有个图片的参数需要传入byte[]"></a>今天在做Android微信分享的时候发现微信有个图片的参数需要传入byte[]</h5><h5 id="Android获取的图片一般都会先转成Bitmap"><a href="#Android获取的图片一般都会先转成Bitmap" class="headerlink" title="Android获取的图片一般都会先转成Bitmap"></a>Android获取的图片一般都会先转成Bitmap</h5><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Resources res=getResources();  </div><div class="line">Bitmap bmp=BitmapFactory.decodeResource(res, R.drawable.pic);</div></pre></td></tr></table></figure>
-<h5 id="获得了Bitmap后还需要把Bitmap对象转成byte"><a href="#获得了Bitmap后还需要把Bitmap对象转成byte" class="headerlink" title="获得了Bitmap后还需要把Bitmap对象转成byte[]"></a>获得了Bitmap后还需要把Bitmap对象转成byte[]</h5><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">//Bitmap bm;</div><div class="line">ByteArrayOutputStream output = new ByteArrayOutputStream();    </div><div class="line">bm.compress(Bitmap.CompressFormat.PNG, 100, output);    </div><div class="line">byte[] result =  output.toByteArray();</div></pre></td></tr></table></figure>
-<h5 id="当然你也可以通过Android的API把byte-转成Bitmap"><a href="#当然你也可以通过Android的API把byte-转成Bitmap" class="headerlink" title="当然你也可以通过Android的API把byte[]转成Bitmap"></a>当然你也可以通过Android的API把byte[]转成Bitmap</h5><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">//Byte[] data</div><div class="line">BitmapFactory.decodeByteArray(data, 0, data.length);</div></pre></td></tr></table></figure>
+                <h5 id="今天在做Android微信分享的时候发现微信有个图片的参数需要传入byte"><a href="#今天在做Android微信分享的时候发现微信有个图片的参数需要传入byte" class="headerlink" title="今天在做Android微信分享的时候发现微信有个图片的参数需要传入byte[]"></a>今天在做Android微信分享的时候发现微信有个图片的参数需要传入byte[]</h5><h5 id="Android获取的图片一般都会先转成Bitmap"><a href="#Android获取的图片一般都会先转成Bitmap" class="headerlink" title="Android获取的图片一般都会先转成Bitmap"></a>Android获取的图片一般都会先转成Bitmap</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Resources res=getResources();  </span><br><span class="line">Bitmap bmp=BitmapFactory.decodeResource(res, R.drawable.pic);</span><br></pre></td></tr></table></figure>
+<h5 id="获得了Bitmap后还需要把Bitmap对象转成byte"><a href="#获得了Bitmap后还需要把Bitmap对象转成byte" class="headerlink" title="获得了Bitmap后还需要把Bitmap对象转成byte[]"></a>获得了Bitmap后还需要把Bitmap对象转成byte[]</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//Bitmap bm;</span><br><span class="line">ByteArrayOutputStream output = new ByteArrayOutputStream();    </span><br><span class="line">bm.compress(Bitmap.CompressFormat.PNG, 100, output);    </span><br><span class="line">byte[] result =  output.toByteArray();</span><br></pre></td></tr></table></figure>
+<h5 id="当然你也可以通过Android的API把byte-转成Bitmap"><a href="#当然你也可以通过Android的API把byte-转成Bitmap" class="headerlink" title="当然你也可以通过Android的API把byte[]转成Bitmap"></a>当然你也可以通过Android的API把byte[]转成Bitmap</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//Byte[] data</span><br><span class="line">BitmapFactory.decodeByteArray(data, 0, data.length);</span><br></pre></td></tr></table></figure>
                 <hr>
                 
 
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2016/09/29/2016-09-29-day/" data-toggle="tooltip" data-placement="top"
-                           title="C++中文字符串转NSString时显示乱码">&larr; Previous Post</a>
+                        <a href="/2016/09/29/2016-09-29-day/" data-toggle="tooltip" data-placement="top" title="C++中文字符串转NSString时显示乱码">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2016/07/02/2016-07-02-day/" data-toggle="tooltip" data-placement="top"
-                           title="Android工程APK签名">Next Post &rarr;</a>
+                        <a href="/2016/07/02/2016-07-02-day/" data-toggle="tooltip" data-placement="top" title="Android工程APK签名">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -189,10 +186,7 @@
                 
                 <!-- 多说评论框 start -->
                 <div class="comment">
-                    <div class="ds-thread"
-                         data-thread-key="2016/09/28/2016-09-28-day/"
-                         data-title="Bitmap 转 byte[]"
-                         data-url="http://yoursite.com/2016/09/28/2016-09-28-day/">
+                    <div class="ds-thread" data-thread-key="2016/09/28/2016-09-28-day/" data-title="Bitmap 转 byte[]" data-url="http://yoursite.com/2016/09/28/2016-09-28-day/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -274,7 +268,7 @@
 
                 
                     <li>
-                        <a target="_blank"  href="https://github.com/gamerzh">
+                        <a target="_blank" href="https://github.com/gamerzh">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>
